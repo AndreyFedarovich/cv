@@ -1,0 +1,41 @@
+@import "../../assets/styles/grid.scss";
+@import "../../assets/styles/typography.scss";
+
+.wrap {
+  margin-top: 80px;
+  @include wrap();
+}
+
+.name {
+  @include h1();
+  margin-bottom: 8px;
+  position: relative;
+}
+
+.line {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.contacts {
+  display: flex;
+  align-items: center;
+  margin-left: 32px;
+  margin-top: -4px;
+  a {
+    &:not(:last-child) {
+      margin-right: 16px;
+    }
+  }
+}
+
+.position {
+  @include h3();
+  margin-top: 0;
+}
+.text {
+  @include text();
+  margin-top: 40px;
+  margin-bottom: 40px;
+}

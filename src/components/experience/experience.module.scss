@@ -1,0 +1,11 @@
+@import "../../assets/styles/typography.scss";
+
+.title {
+  @include h2();
+  margin-top: 40px;
+  margin-bottom: 8px;
+}
+
+.palce {
+  @include text();
+}

@@ -1,0 +1,67 @@
+@import "./variables.scss";
+@import "./mixins.scss";
+
+@mixin h1($font-weight: 500) {
+  font-size: 70px;
+  line-height: 120%;
+  font-weight: $font-weight;
+  letter-spacing: 0.8px;
+  @include max-vw($xxl) {
+    font-size: 60px;
+  }
+
+  @include max-vw($xl) {
+    font-size: 55px;
+  }
+
+  @include max-vw($lg) {
+    font-size: 45px;
+  }
+
+  @include max-vw($md) {
+    font-size: 35px;
+  }
+
+  @include max-vw($sm) {
+    line-height: 130%;
+    font-size: 30px;
+  }
+}
+
+@mixin h3($font-weight: 400) {
+  font-size: 20px;
+  line-height: 140%;
+  font-weight: $font-weight;
+
+  @include max-vw($hd) {
+    font-size: 19px;
+  }
+}
+
+@mixin h2($font-weight: 500) {
+  font-size: 35px;
+  line-height: 140%;
+  font-weight: $font-weight;
+
+  @include max-vw($xxl) {
+    font-size: 32px;
+  }
+
+  @include max-vw($hd) {
+    font-size: 28px;
+  }
+
+  @include max-vw($md) {
+    font-size: 25px;
+  }
+
+  @include max-vw($sm) {
+    font-size: 22px;
+  }
+}
+
+@mixin text($font-weight: 300) {
+  font-size: 16px;
+  line-height: 150%;
+  font-weight: $font-weight;
+}

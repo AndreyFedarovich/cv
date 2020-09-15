@@ -1,0 +1,19 @@
+@import "./variables.scss";
+@import "./mixins.scss";
+
+@mixin wrap() {
+  width: 100%;
+  max-width: 740px;
+  margin-left: auto;
+  margin-right: auto;
+
+  @include max-vw($lg) {
+    max-width: calc(100% - 80px);
+  }
+  @include max-vw($md) {
+    max-width: calc(100% - 60px);
+  }
+  @include max-vw($sm) {
+    max-width: calc(100% - 40px);
+  }
+}
