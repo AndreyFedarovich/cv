@@ -4,11 +4,21 @@
 .wrap {
   margin-top: 80px;
   @include wrap();
+  @include max-vw($hd) {
+    margin-top: 60px;
+  }
 }
-
+.panel {
+  position: fixed;
+  right: 6vh;
+  top: 6vh;
+  @include max-vw($hd) {
+    right: 4vh;
+    top: 4vh;
+  }
+}
 .name {
   @include h1();
-  margin-bottom: 8px;
   position: relative;
 }
 
@@ -16,18 +26,7 @@
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-}
-
-.contacts {
-  display: flex;
-  align-items: center;
-  margin-left: 32px;
-  margin-top: -4px;
-  a {
-    &:not(:last-child) {
-      margin-right: 16px;
-    }
-  }
+  margin-bottom: 4px;
 }
 
 .position {

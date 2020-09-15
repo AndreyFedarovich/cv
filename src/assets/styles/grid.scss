@@ -6,7 +6,9 @@
   max-width: 740px;
   margin-left: auto;
   margin-right: auto;
-
+  @include max-vw($hd) {
+    max-width: 680px;
+  }
   @include max-vw($lg) {
     max-width: calc(100% - 80px);
   }
