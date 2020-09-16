@@ -1,9 +1,32 @@
+@import "./mixins.scss";
+@import "./variables.scss";
+
 html,
 body {
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+.dark {
+  --bg: #161616;
+  --text-color: rgba(255, 255, 255, 0.999);
+  --btn-color: rgba(255, 255, 255, 0.999);
+  --filter-to-white: invert(100%);
+}
+
+.light {
+  --bg: rgba(255, 255, 255, 0.999);
+  --text-color: #161616;
+  --btn-color: #161616;
+  --filter-to-white: invert(0);
+}
+
+body {
+  transition: background-color $speed, color $speed;
+  background-color: var(--bg);
+  color: var(--text-color);
 }
 
 a {

@@ -2,6 +2,7 @@
 
 @mixin switch-wrap() {
   display: inline-flex;
+  margin: 0 auto;
   background-color: $gray;
   padding: 3px;
   border-radius: 20px;

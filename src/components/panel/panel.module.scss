@@ -1,0 +1,15 @@
+@import "../../assets/styles/variables.scss";
+@import "../../assets/styles/mixins.scss";
+
+.panel {
+  position: fixed;
+  right: 6vh;
+  top: 6vh;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  @include max-vw($hd) {
+    right: 4vh;
+    top: 4vh;
+  }
+}

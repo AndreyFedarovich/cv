@@ -1,43 +1,42 @@
 /* eslint-disable jsx-a11y/control-has-associated-label */
-import React, { useEffect, useRef, createRef } from 'react';
+import React, {
+  useEffect, useRef, createRef, useContext,
+} from 'react';
 import PropTypes from 'prop-types';
-import cn from 'classnames';
+import { Context } from '../../context';
 import styles from './switch.module.scss';
 
-const Switcher = ({
-  options, active, setActive, size,
-}) => {
+const Switcher = ({ options, size }) => {
   const swiperRef = useRef(null);
   const sliderRef = useRef(null);
   const elementsRef = useRef(options.map(() => createRef()));
-  const setSliderPosition = (optionIndex) => {
-    if (options.length > 1 && swiperRef && swiperRef.current && elementsRef.current[optionIndex]) {
+  const { selectMode, mode } = useContext(Context);
+
+  const setSliderPosition = () => {
+    const idx = mode === 'light' ? 0 : 1;
+    if (options.length > 1 && swiperRef?.current && elementsRef.current[idx]) {
       const { left: parentLeft } = swiperRef.current.getBoundingClientRect();
-      const { width, left } = elementsRef.current[optionIndex].current.getBoundingClientRect();
+      const { width, left } = elementsRef.current[idx].current.getBoundingClientRect();
       sliderRef.current.setAttribute('style', `width:${width}px; left:${left - parentLeft}px`);
     }
   };
   useEffect(() => {
-    setSliderPosition(active);
+    setSliderPosition();
   });
-  const onSwitch = (e, optionIndex) => {
+  const onSwitch = (e, value) => {
     e.target.blur();
-    setActive(optionIndex);
+    selectMode(value);
   };
   return (
     <button
-      onClick={(e) => onSwitch(e, active === 0 ? 1 : 0)}
+      onClick={(e) => onSwitch(e, mode === 'light' ? 'dark' : 'light')}
       ref={swiperRef}
       className={styles[`size-${size}`]}
     >
       <div ref={sliderRef} className={styles.slider} />
       <div className={styles.options}>
         {options.map(({ title, element }, i) => (
-          <div
-            className={cn(styles.option, { [styles.active]: i === active })}
-            ref={elementsRef.current[i]}
-            key={title}
-          >
+          <div className={styles.option} ref={elementsRef.current[i]} key={title}>
             {element}
           </div>
         ))}
@@ -48,8 +47,6 @@ const Switcher = ({
 
 Switcher.propTypes = {
   options: PropTypes.array.isRequired,
-  active: PropTypes.number.isRequired,
-  setActive: PropTypes.func.isRequired,
   size: PropTypes.oneOf(['s', 'm']),
 };
 

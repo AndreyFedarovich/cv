@@ -1,36 +1,55 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import data from './data';
-import Switch from '../../components/switch';
+import Panel from '../../components/panel';
 import Contacts from '../../components/contacts';
 import Stackshare from '../../components/stackshare';
 import Experience from '../../components/experience';
 import Education from '../../components/education';
+import { Context } from '../../context';
+import useBodyClass from '../../hooks/use-body-class.hook';
 import s from './main.module.scss';
 
 const Main = () => {
-  const [modeIndex, setModeIndex] = useState(0);
+  const [mode, setMode] = useState('light');
+  const [lang, setLang] = useState('eng');
+
+  const selectLang = (value) => setLang(value);
+  const selectMode = (value) => setMode(value);
+
+  useEffect(() => {
+    selectLang(localStorage.getItem('lang') || 'eng');
+    selectMode(localStorage.getItem('mode') || 'light');
+  }, []);
+
+  useBodyClass(mode);
+
+  useEffect(() => {
+    localStorage.setItem('mode', mode);
+  }, [mode]);
+
+  useEffect(() => {
+    localStorage.setItem('lang', lang);
+  }, [lang]);
+
+  const state = {
+    lang, mode, selectLang, selectMode,
+  };
 
   return (
-    <>
-      <div className={s.panel}>
-        <Switch
-          active={modeIndex}
-          options={data.mode}
-          setActive={setModeIndex}
-        />
-      </div>
+    <Context.Provider value={state}>
+      <Panel mode={data.mode} langs={data.langs} />
       <div className={s.wrap}>
         <div className={s.line}>
-          <h1 className={s.name}>{data.name}</h1>
+          <h1 className={s.name}>{data.name[lang]}</h1>
           <Contacts {...data.contacts} />
         </div>
-        <h3 className={s.position}>{data.position}</h3>
-        <p className={s.text}>{data.text}</p>
+        <h3 className={s.position}>{data.position[lang]}</h3>
+        <p className={s.text}>{data.text[lang]}</p>
         <Stackshare {...data.stackshare} />
         <Experience {...data.experience} />
         <Education {...data.education} />
       </div>
-    </>
+    </Context.Provider>
   );
 };
 

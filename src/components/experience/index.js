@@ -11,7 +11,7 @@ const Experience = ({ title, places }) => (
     <div>{places.map(({
       title: placeTitle, company, location, start, end,
     }) => (
-      <div className={s.palce}>
+      <div key={placeTitle} className={s.place}>
         <p className={s.placeTitle}>{placeTitle} at {company}</p>
         <p className={s.location}>{location}</p>
         <p className={s.location}>
