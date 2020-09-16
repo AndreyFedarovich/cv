@@ -1,27 +1,32 @@
-/* eslint-disable jsx-a11y/anchor-has-content */
-/* eslint-disable jsx-a11y/control-has-associated-label */
-import React from 'react';
+import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
+import { Context } from '../../context';
 import { getPeriod } from '../../helpers/date.helper';
 import s from './experience.module.scss';
 
-const Experience = ({ title, places }) => (
-  <>
-    <h2 className={s.title}>{title}</h2>
-    <div>{places.map(({
-      title: placeTitle, company, location, start, end,
-    }) => (
-      <div key={placeTitle} className={s.place}>
-        <p className={s.placeTitle}>{placeTitle} at {company}</p>
-        <p className={s.location}>{location}</p>
-        <p className={s.location}>
-          {start.text} - {end.text} ({getPeriod(start.date, end.date)})
-        </p>
+const Experience = ({ title, places }) => {
+  const { lang } = useContext(Context);
+
+  return (
+    <>
+      <h2 className={s.title}>{title[lang]}</h2>
+      <div>{places.map(({
+        title: placeTitle, company, location, start, end,
+      }) => (
+        <div key={placeTitle[lang]} className={s.place}>
+          <p className={s.placeTitle}>
+            {placeTitle[lang]} {lang === 'eng' ? 'at' : '-'} {company}
+          </p>
+          <p className={s.location}>{location[lang]}</p>
+          <p className={s.location}>
+            {start.text[lang]} - {end.text[lang]} ({getPeriod(start.date, end.date)})
+          </p>
+        </div>
+      ))}
       </div>
-    ))}
-    </div>
-  </>
-);
+    </>
+  );
+};
 
 Experience.propTypes = {
   title: PropTypes.string.isRequired,

@@ -1,3 +1,5 @@
+@import "../../assets/styles/variables.scss";
+
 .wrap {
   margin-top: 8px;
   button {
@@ -7,11 +9,13 @@
     padding: 4px 6px;
     min-height: 24px;
     color: var(--btn-color);
+    transition: opacity $speed;
     &:not(:last-child) {
       margin-right: 4px;
     }
     &:active {
       outline: none;
+      opacity: 0.6;
     }
   }
 }

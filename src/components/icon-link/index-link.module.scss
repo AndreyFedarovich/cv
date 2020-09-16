@@ -8,13 +8,15 @@
   align-items: center;
   justify-content: center;
   opacity: 0.7;
-  transition: opacity $speed;
-  transition: filter $speed;
+  transition: opacity $speed, filter $speed;
   filter: var(--filter-to-white);
   img {
     width: 24px;
   }
   &:hover {
     opacity: 1;
+  }
+  &:active {
+    opacity: 0.6;
   }
 }

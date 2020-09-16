@@ -76,24 +76,42 @@ const data = {
   },
 
   experience: {
-    title: 'Experience',
+    title: {
+      eng: 'Experience',
+      ua: 'Досвід',
+    },
     places: [{
-      title: 'Javascript Developer',
+      title: {
+        eng: 'Javascript Developer',
+        ua: 'Javascript розробник',
+      },
       company: 'PixelPlex',
-      location: 'Belarus, Minsk',
+      location: {
+        eng: 'Belarus, Minsk',
+        ua: 'Білорусь, Мінськ',
+      },
       start: {
         date: new Date(2018, 1, 1),
-        text: 'Feb 2018',
+        text: {
+          eng: 'Feb 2018',
+          ua: '2018.03',
+        },
       },
       end: {
         date: new Date(),
-        text: 'Present',
+        text: {
+          eng: 'Present',
+          ua: 'По нинi',
+        },
       },
     }],
   },
 
   education: {
-    title: 'Education',
+    title: {
+      eng: 'Education',
+      ua: 'Освіта',
+    },
   },
 };
 export default data;
