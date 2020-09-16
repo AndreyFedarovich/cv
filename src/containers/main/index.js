@@ -37,11 +37,13 @@ const Main = () => {
 
   return (
     <Context.Provider value={state}>
-      <Panel mode={data.mode} langs={data.langs} />
       <div className={s.wrap}>
         <div className={s.line}>
           <h1 className={s.name}>{data.name[lang]}</h1>
-          <Contacts {...data.contacts} />
+          <div className={s.mobLine}>
+            <Contacts {...data.contacts} />
+            <Panel mode={data.mode} langs={data.langs} />
+          </div>
         </div>
         <h3 className={s.position}>{data.position[lang]}</h3>
         <p className={s.text}>{data.text[lang]}</p>

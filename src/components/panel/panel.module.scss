@@ -2,14 +2,21 @@
 @import "../../assets/styles/mixins.scss";
 
 .panel {
-  position: fixed;
-  right: 6vh;
-  top: 6vh;
-  display: inline-flex;
-  flex-direction: column;
-  justify-content: center;
-  @include max-vw($hd) {
-    right: 4vh;
-    top: 4vh;
+  @include min-vw($lg) {
+    position: fixed;
+    right: 6vh;
+    top: 6vh;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    @include max-vw($hd) {
+      right: 4vh;
+      top: 4vh;
+    }
+  }
+  @include max-vw($lg) {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
   }
 }

@@ -21,7 +21,7 @@ const Stackshare = ({ title, stack }) => {
 };
 
 Stackshare.propTypes = {
-  title: PropTypes.string.isRequired,
+  title: PropTypes.object.isRequired,
   stack: PropTypes.array.isRequired,
 };
 

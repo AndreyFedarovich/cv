@@ -29,7 +29,7 @@ const Experience = ({ title, places }) => {
 };
 
 Experience.propTypes = {
-  title: PropTypes.string.isRequired,
+  title: PropTypes.object.isRequired,
   places: PropTypes.array.isRequired,
 };
 

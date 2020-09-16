@@ -1,10 +1,15 @@
+@import "../../assets/styles/variables.scss";
+@import "../../assets/styles/mixins.scss";
+
 .contacts {
   display: flex;
   align-items: center;
-  margin-top: 16px;
   a {
     &:not(:last-child) {
       margin-right: 16px;
     }
+  }
+  @include min-vw($lg) {
+    margin-top: 16px;
   }
 }

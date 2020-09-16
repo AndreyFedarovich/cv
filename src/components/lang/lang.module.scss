@@ -1,4 +1,5 @@
 @import "../../assets/styles/variables.scss";
+@import "../../assets/styles/mixins.scss";
 
 .wrap {
   margin-top: 8px;
@@ -17,6 +18,10 @@
       outline: none;
       opacity: 0.6;
     }
+  }
+  @include max-vw($lg) {
+    margin-top: 0;
+    margin-right: 20px;
   }
 }
 
