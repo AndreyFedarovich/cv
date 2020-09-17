@@ -34,7 +34,7 @@ const data = {
     },
     list: [{
       eng: 'Web developer with over 3 years of experience.',
-      ua: 'Веб-розробник з досвідом роботи понад 3 рокiв.',
+      ua: 'Веб-розробник з досвідом роботи понад 3 років.',
     }, {
       eng: 'Participated in the development of browser extensions, desktop applications, websites, e-mails and PDF documents.',
       ua: 'Брав участь у розробці розширень браузера, настільних додатків, веб-сайтів, електронних листів та PDF документiв.',
@@ -42,13 +42,9 @@ const data = {
       eng: 'Strong knowledge about ui development (accessibility, semantic, optimization).',
       ua: 'Поглибленні знання про розробку UI (доступність, семантика, оптимізація).',
     }, {
-      eng: 'I enjoy learning and helping others learn new things.',
+      eng: 'I enjoy learning and helping others to learn new things.',
       ua: 'Мені подобається вчитися та допомагати іншим пізнавати нове.',
     }],
-  },
-  text: {
-    ua: 'Я веб-розробник з досвідом роботи понад 3 роки. Я брав участь у розробці розширень браузера, настільних додатків, веб-сайтів, електронних листів та PDF документiв. Я добре знаю про розробку UI (доступність, семантика, оптимізація). Мені подобається вчитися та допомагати іншим пізнавати нове.',
-    eng: 'I\'m a web developer with over 3 years experiance. I have participated in the development of browser extensions, desktop applications, websites, e-mails. I have strong knowledge about ui development (accessibility, semantic, optimization). I enjoy learning and helping others learn new things.',
   },
   langs: ['eng', 'ua'],
   mode: [{
