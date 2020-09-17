@@ -33,7 +33,7 @@ const data = {
       ua: 'Про мене',
     },
     list: [{
-      eng: 'Цeb developer with over 3 years of experience.',
+      eng: 'Web developer with over 3 years of experience.',
       ua: 'Веб-розробник з досвідом роботи понад 3 рокiв.',
     }, {
       eng: 'Participated in the development of browser extensions, desktop applications, websites, e-mails and PDF documents.',
