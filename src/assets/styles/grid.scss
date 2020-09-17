@@ -10,12 +10,12 @@
     max-width: 680px;
   }
   @include max-vw($lg) {
-    max-width: calc(100% - 80px);
+    width: calc(100% - 80px);
   }
   @include max-vw($md) {
-    max-width: calc(100% - 60px);
+    width: calc(100% - 60px);
   }
   @include max-vw($sm) {
-    max-width: calc(100% - 40px);
+    width: calc(100% - 40px);
   }
 }

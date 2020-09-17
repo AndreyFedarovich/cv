@@ -13,13 +13,14 @@ const Experience = ({ title, places }) => {
       <div>{places.map(({
         title: placeTitle, company, location, start, end,
       }) => (
-        <div key={placeTitle[lang]} className={s.place}>
-          <p className={s.placeTitle}>
+        <div key={placeTitle.eng} className={s.place}>
+          <p>
             {placeTitle[lang]} {lang === 'eng' ? 'at' : '-'} {company}
           </p>
-          <p className={s.location}>{location[lang]}</p>
-          <p className={s.location}>
-            {start.text[lang]} - {end.text[lang]} ({getPeriod(start.date, end.date)})
+          <p>{location[lang]}</p>
+          <p>
+            {start.text[lang]} - {end.text[lang]}{' '}
+            <span className={s.period}>({getPeriod(start.date, end.date)})</span>
           </p>
         </div>
       ))}

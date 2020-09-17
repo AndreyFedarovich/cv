@@ -1,4 +1,5 @@
 @import "../../assets/styles/variables.scss";
+@import "../../assets/styles/mixins.scss";
 
 @mixin switch-wrap() {
   display: inline-flex;
@@ -11,6 +12,7 @@
   outline: none;
   box-shadow: 0px 1px 2px rgba(black, 0.3);
   cursor: pointer;
+  @include focus(20px);
 }
 .options {
   display: inline-flex;

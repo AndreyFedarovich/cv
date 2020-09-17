@@ -3,12 +3,15 @@
 
 .wrap {
   margin-top: 80px;
+  margin-bottom: 80px;
   @include wrap();
   @include max-vw($hd) {
     margin-top: 60px;
+    margin-bottom: 60px;
   }
   @include max-vw($lg) {
     margin-top: 30px;
+    margin-bottom: 40px;
   }
 }
 
@@ -34,6 +37,20 @@
     width: 100%;
     align-items: center;
     margin-bottom: 20px;
+  }
+}
+
+.posLine {
+  display: flex;
+  align-items: baseline;
+}
+
+.location {
+  margin-left: 4px;
+  margin-right: 4px;
+  @include text();
+  span {
+    opacity: 0.6;
   }
 }
 

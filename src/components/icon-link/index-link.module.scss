@@ -1,4 +1,5 @@
 @import "../../assets/styles/variables.scss";
+@import "../../assets/styles/mixins.scss";
 
 .icon {
   width: 30px;
@@ -8,9 +9,11 @@
   align-items: center;
   justify-content: center;
   opacity: 0.7;
-  transition: opacity $speed, filter $speed;
-  filter: var(--filter-to-white);
+  transition: opacity $speed;
   img {
+    transition: filter $speed;
+
+    filter: var(--filter-to-white);
     width: 24px;
   }
   &:hover {
@@ -19,4 +22,5 @@
   &:active {
     opacity: 0.6;
   }
+  @include focus();
 }

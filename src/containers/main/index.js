@@ -45,7 +45,11 @@ const Main = () => {
             <Panel mode={data.mode} langs={data.langs} />
           </div>
         </div>
-        <h3 className={s.position}>{data.position[lang]}</h3>
+        <div className={s.posLine}>
+          <h3 className={s.position}>{data.position[lang]}</h3>
+          <p className={s.location}> - <span>{data.location[lang]}</span></p>
+          {data.location.flag}
+        </div>
         <p className={s.text}>{data.text[lang]}</p>
         <Stackshare {...data.stackshare} />
         <Experience {...data.experience} />

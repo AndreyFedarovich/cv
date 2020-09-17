@@ -14,22 +14,21 @@ import { FLAG_UA } from '../../constatnts/ui.constants';
 
 const data = {
   name: {
-    ua: 'Андрій Федорович',
     eng: 'Andrey Fedorovich',
+    ua: 'Андрій Федорович',
   },
   position: {
-    ua: 'Front-end розробник',
     eng: 'Front-end developer',
+    ua: 'Front-end розробник',
+  },
+  location: {
+    eng: 'Kiev, Ukraine',
+    ua: 'Київ, Україна',
+    flag: <span role="img" aria-label={FLAG_UA}>🇺🇦</span>,
   },
   text: {
-    ua:
-  <>
-    Я веб-розробник з досвідом роботи понад 3 роки. Я брав участь у розробці розширень браузера, настільних додатків, веб-сайтів, електронних листів. Я добре знаю про розробку UI (доступність, семантика, оптимізація). Мені подобається вчитися та допомагати іншим пізнавати нове. Зараз живу в Києві <span role="img" aria-label={FLAG_UA}>🇺🇦</span>
-  </>,
-    eng:
-  <>
-    I&apos;m a web developer with over 3 years experiance. I have participated in the development of browser extensions, desktop applications, websites, e-mails. I have strong knowledge about ui development (accessibility, semantic, optimization). I enjoy learning and helping others learn new things. Now living in Kiev <span role="img" aria-label={FLAG_UA}>🇺🇦</span>
-  </>,
+    ua: 'Я веб-розробник з досвідом роботи понад 3 роки. Я брав участь у розробці розширень браузера, настільних додатків, веб-сайтів, електронних листів. Я добре знаю про розробку UI (доступність, семантика, оптимізація). Мені подобається вчитися та допомагати іншим пізнавати нове.',
+    eng: 'I\'m a web developer with over 3 years experiance. I have participated in the development of browser extensions, desktop applications, websites, e-mails. I have strong knowledge about ui development (accessibility, semantic, optimization). I enjoy learning and helping others learn new things.',
   },
   langs: ['eng', 'ua'],
   mode: [{
@@ -112,6 +111,22 @@ const data = {
       eng: 'Education',
       ua: 'Освіта',
     },
+    list: [{
+      title: {
+        eng: 'Belarusian State University',
+        ua: 'Білоруський державний університет',
+      },
+      description: {
+        eng: 'Bachelor`s degree, faculty of social and cultural communications',
+        ua: 'Вища, факультет соціальних та культурних комунікацій',
+      },
+      field: {
+        eng: 'Cultural studies',
+        ua: 'Культурологія',
+      },
+      start: 2011,
+      end: 2016,
+    }],
   },
 };
 export default data;
