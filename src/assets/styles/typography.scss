@@ -65,3 +65,24 @@
   line-height: 150%;
   font-weight: $font-weight;
 }
+
+@mixin li() {
+  @include text();
+  position: relative;
+  padding-left: 20px;
+
+  &:not(:last-child) {
+    margin-bottom: 8px;
+  }
+
+  &:before {
+    content: "";
+    width: 4px;
+    height: 4px;
+    background-color: var(--text-color);
+    position: absolute;
+    border-radius: 50%;
+    top: 11px;
+    left: 0;
+  }
+}

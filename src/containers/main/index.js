@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import data from './data';
 import Panel from '../../components/panel';
+import About from '../../components/about';
 import Contacts from '../../components/contacts';
 import Stackshare from '../../components/stackshare';
 import Experience from '../../components/experience';
@@ -50,7 +51,7 @@ const Main = () => {
           <p className={s.location}> - <span>{data.location[lang]}</span></p>
           {data.location.flag}
         </div>
-        <p className={s.text}>{data.text[lang]}</p>
+        <About {...data.about} />
         <Stackshare {...data.stackshare} />
         <Experience {...data.experience} />
         <Education {...data.education} />

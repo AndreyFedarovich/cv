@@ -10,6 +10,7 @@ import reactLogo from '../../assets/images/react.svg';
 import cssModulesLogo from '../../assets/images/css-modules.svg';
 import nextLogo from '../../assets/images/next.svg';
 import figmaLogo from '../../assets/images/figma.svg';
+import gitLogo from '../../assets/images/git-stack.svg';
 import { FLAG_UA } from '../../constatnts/ui.constants';
 
 const data = {
@@ -26,8 +27,27 @@ const data = {
     ua: 'Київ, Україна',
     flag: <span role="img" aria-label={FLAG_UA}>🇺🇦</span>,
   },
+  about: {
+    title: {
+      eng: 'About',
+      ua: 'Про мене',
+    },
+    list: [{
+      eng: 'Web developer with over 3 years experiance.',
+      ua: 'Веб-розробник з досвідом роботи понад 3 рокiв.',
+    }, {
+      eng: 'Participated in the development of browser extensions, desktop applications, websites, e-mails and PDF documents.',
+      ua: 'Брав участь у розробці розширень браузера, настільних додатків, веб-сайтів, електронних листів та PDF документiв.',
+    }, {
+      eng: 'Have strong knowledge about ui development (accessibility, semantic, optimization).',
+      ua: 'Добре знаю про розробку UI (доступність, семантика, оптимізація).',
+    }, {
+      eng: 'I enjoy learning and helping others learn new things.',
+      ua: 'Мені подобається вчитися та допомагати іншим пізнавати нове.',
+    }],
+  },
   text: {
-    ua: 'Я веб-розробник з досвідом роботи понад 3 роки. Я брав участь у розробці розширень браузера, настільних додатків, веб-сайтів, електронних листів. Я добре знаю про розробку UI (доступність, семантика, оптимізація). Мені подобається вчитися та допомагати іншим пізнавати нове.',
+    ua: 'Я веб-розробник з досвідом роботи понад 3 роки. Я брав участь у розробці розширень браузера, настільних додатків, веб-сайтів, електронних листів та PDF документiв. Я добре знаю про розробку UI (доступність, семантика, оптимізація). Мені подобається вчитися та допомагати іншим пізнавати нове.',
     eng: 'I\'m a web developer with over 3 years experiance. I have participated in the development of browser extensions, desktop applications, websites, e-mails. I have strong knowledge about ui development (accessibility, semantic, optimization). I enjoy learning and helping others learn new things.',
   },
   langs: ['eng', 'ua'],
@@ -38,6 +58,7 @@ const data = {
     title: 'dark',
     element: <img src={darkIcon} alt="" />,
   }],
+
   contacts: {
     list: [{
       title: 'github',
@@ -69,6 +90,9 @@ const data = {
       title: 'CSS Modules',
       image: cssModulesLogo,
     }, {
+      title: 'Git',
+      image: gitLogo,
+    }, {
       title: 'Figma',
       image: figmaLogo,
     }],
@@ -76,8 +100,8 @@ const data = {
 
   experience: {
     title: {
-      eng: 'Experience',
-      ua: 'Досвід',
+      eng: 'Work experience',
+      ua: 'Досвід роботи',
     },
     places: [{
       title: {
@@ -101,6 +125,30 @@ const data = {
         text: {
           eng: 'Present',
           ua: 'По нинi',
+        },
+      },
+    }, {
+      title: {
+        eng: 'UI developer',
+        ua: 'UI розробник',
+      },
+      company: 'DShop24',
+      location: {
+        eng: 'Belarus, Minsk',
+        ua: 'Білорусь, Мінськ',
+      },
+      start: {
+        date: new Date(2016, 1, 1),
+        text: {
+          eng: 'Feb 2016',
+          ua: '2016.02',
+        },
+      },
+      end: {
+        date: new Date(2016, 10, 1),
+        text: {
+          eng: 'Nov 2016',
+          ua: '2016.11',
         },
       },
     }],

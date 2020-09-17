@@ -25,5 +25,5 @@ export const getPeriod = (start, end) => {
   const yAppendix = years > 1 ? ' yrs' : ' year';
   const mAppendix = months > 1 ? ' mos' : ' month';
 
-  return `${years + yAppendix}, ${months}${mAppendix}`;
+  return `${years > 1 ? `${years + yAppendix}, ` : ''}${months}${mAppendix}`;
 };
