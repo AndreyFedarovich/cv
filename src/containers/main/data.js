@@ -33,14 +33,14 @@ const data = {
       ua: 'Про мене',
     },
     list: [{
-      eng: 'Web developer with over 3 years experiance.',
+      eng: 'Цeb developer with over 3 years of experience.',
       ua: 'Веб-розробник з досвідом роботи понад 3 рокiв.',
     }, {
       eng: 'Participated in the development of browser extensions, desktop applications, websites, e-mails and PDF documents.',
       ua: 'Брав участь у розробці розширень браузера, настільних додатків, веб-сайтів, електронних листів та PDF документiв.',
     }, {
-      eng: 'Have strong knowledge about ui development (accessibility, semantic, optimization).',
-      ua: 'Добре знаю про розробку UI (доступність, семантика, оптимізація).',
+      eng: 'Strong knowledge about ui development (accessibility, semantic, optimization).',
+      ua: 'Поглибленні знання про розробку UI (доступність, семантика, оптимізація).',
     }, {
       eng: 'I enjoy learning and helping others learn new things.',
       ua: 'Мені подобається вчитися та допомагати іншим пізнавати нове.',

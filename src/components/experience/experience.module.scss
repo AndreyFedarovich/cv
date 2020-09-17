@@ -5,14 +5,25 @@
   margin-top: 40px;
   margin-bottom: 8px;
 }
-.places {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-column-gap: 20px;
-  grid-row-gap: 20px;
-}
+
 .place {
   @include text();
+  position: relative;
+  &:not(:last-child) {
+    margin-bottom: 12px;
+  }
+  &:not(:first-child) {
+    &:before {
+      content: "";
+      display: block;
+      height: 1px;
+      width: 100%;
+      background-color: var(--text-color);
+      transition: background-color $speed;
+      opacity: 0.1;
+      margin-bottom: 12px;
+    }
+  }
 }
 
 .period {

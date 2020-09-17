@@ -80,6 +80,7 @@
     width: 4px;
     height: 4px;
     background-color: var(--text-color);
+    transition: background-color $speed;
     position: absolute;
     border-radius: 50%;
     top: 11px;
