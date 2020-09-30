@@ -29,6 +29,10 @@
 
 .mail {
   outline: none;
+  transition: opacity $speed;
   @include text();
   @include focus();
+  &:active {
+    opacity: 0.8;
+  }
 }
