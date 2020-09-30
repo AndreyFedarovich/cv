@@ -1,0 +1,15 @@
+@import "../../assets/styles/variables.scss";
+@import "../../assets/styles/mixins.scss";
+
+.wrap {
+  display: flex;
+  align-items: center;
+  a {
+    &:not(:last-child) {
+      margin-right: 16px;
+    }
+  }
+  @include min-vw($lg) {
+    margin-top: 16px;
+  }
+}

@@ -12,11 +12,11 @@
     color: var(--btn-color);
     transition: opacity $speed;
     font-family: inherit;
+    outline: none;
     &:not(:last-child) {
       margin-right: 4px;
     }
     &:active {
-      outline: none;
       opacity: 0.6;
     }
     @include focus();

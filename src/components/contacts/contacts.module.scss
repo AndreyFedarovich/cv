@@ -1,15 +1,34 @@
 @import "../../assets/styles/variables.scss";
+@import "../../assets/styles/typography.scss";
 @import "../../assets/styles/mixins.scss";
 
-.contacts {
+.wrap {
   display: flex;
   align-items: center;
-  a {
-    &:not(:last-child) {
-      margin-right: 16px;
-    }
+  margin-top: 10px;
+  @include max-vw($sm) {
+    align-items: flex-start;
+    flex-direction: column;
   }
-  @include min-vw($lg) {
-    margin-top: 16px;
+}
+
+.phone {
+  @include text();
+}
+
+.separator {
+  height: 16px;
+  width: 1px;
+  background-color: var(--text-color);
+  opacity: 0.1;
+  margin: 0 10px;
+  @include max-vw($sm) {
+    display: none;
   }
+}
+
+.mail {
+  outline: none;
+  @include text();
+  @include focus();
 }

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import data from './data';
 import Panel from '../../components/panel';
 import About from '../../components/about';
+import Social from '../../components/social';
 import Contacts from '../../components/contacts';
 import Stackshare from '../../components/stackshare';
 import Experience from '../../components/experience';
@@ -42,15 +43,19 @@ const Main = () => {
         <div className={s.line}>
           <h1 className={s.name}>{data.name[lang]}</h1>
           <div className={s.mobLine}>
-            <Contacts {...data.contacts} />
+            <Social {...data.social} />
             <Panel mode={data.mode} langs={data.langs} />
           </div>
         </div>
         <div className={s.posLine}>
           <h3 className={s.position}>{data.position[lang]}</h3>
-          <p className={s.location}> - <span>{data.location[lang]}</span></p>
-          {data.location.flag}
+          <p className={s.location}>
+            <span className={s.separator}>{' '}-{' '}</span>
+            <span className={s.locationContent}>{data.location[lang]}</span>
+            {data.location.flag}
+          </p>
         </div>
+        <Contacts {...data.contacts} />
         <About {...data.about} />
         <Stackshare {...data.stackshare} />
         <Experience {...data.experience} />

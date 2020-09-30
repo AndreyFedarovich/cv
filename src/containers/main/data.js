@@ -27,26 +27,40 @@ const data = {
     ua: 'Київ, Україна',
     flag: <span role="img" aria-label={FLAG_UA}>🇺🇦</span>,
   },
+
+  contacts: {
+    phone: '+375 29 828 99 07',
+    mail: 'a.fedorovich@protonmail.com',
+  },
+
   about: {
     title: {
       eng: 'About',
       ua: 'Про мене',
     },
     list: [{
-      eng: 'Web developer with over 3 years of experience.',
-      ua: 'Веб-розробник з досвідом роботи понад 3 років.',
+      eng: 'Web developer with over 3 years of experience',
+      ua: 'Веб-розробник з досвідом роботи понад 3 років',
     }, {
-      eng: 'Participated in the development of browser extensions, desktop applications, websites, e-mails and PDF documents.',
-      ua: 'Брав участь у розробці розширень браузера, настільних додатків, веб-сайтів, електронних листів та PDF документiв.',
+      eng: 'Participated in the development of browser extensions, desktop applications, websites, e-mails and PDF documents',
+      ua: 'Брав участь у розробці розширень браузера, настільних додатків, веб-сайтів, електронних листів та PDF документiв',
     }, {
-      eng: 'Strong knowledge about ui development (accessibility, semantic, optimization).',
-      ua: 'Поглибленні знання про розробку UI (доступність, семантика, оптимізація).',
+      eng: 'Strong knowledge about ui development (accessibility, semantic, optimization)',
+      ua: 'Поглибленні знання про розробку UI (доступність, семантика, оптимізація)',
     }, {
-      eng: 'I enjoy learning and helping others to learn new things.',
-      ua: 'Мені подобається вчитися та допомагати іншим пізнавати нове.',
+      eng: 'Understanding OOP, Design Pattern',
+      ua: 'Розуміння ООП, патернів проектування',
+    }, {
+      eng: 'Experience with build systems (e.g Webpack, Gulp)',
+      ua: 'Досвід роботи зі системами побудови (наприклад, Webpack, Gulp)',
+    }, {
+      eng: 'I enjoy learning and helping others to learn new things',
+      ua: 'Мені подобається вчитися та допомагати іншим пізнавати нове',
     }],
   },
+
   langs: ['eng', 'ua'],
+
   mode: [{
     title: 'light',
     element: <img src={lightIcon} alt="" />,
@@ -55,7 +69,7 @@ const data = {
     element: <img src={darkIcon} alt="" />,
   }],
 
-  contacts: {
+  social: {
     list: [{
       title: 'github',
       image: github,
@@ -80,7 +94,7 @@ const data = {
       title: 'Next.js',
       image: nextLogo,
     }, {
-      title: 'React',
+      title: 'React / Redux',
       image: reactLogo,
     }, {
       title: 'CSS Modules',

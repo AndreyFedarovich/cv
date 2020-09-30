@@ -1,24 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import IconLink from '../icon-link';
 import s from './contacts.module.scss';
 
-const Contacts = ({ list }) => (
-  <div className={s.contacts}>
-    {list.map(({ title, image, url }) => (
-      <IconLink
-        key={title}
-        image={image}
-        url={url}
-        alt={title}
-      />
-    ))}
-
+const Contacts = ({ phone, mail }) => (
+  <div className={s.wrap}>
+    <p className={s.phone}>{phone}</p>
+    <span className={s.separator} />
+    <a href={`mailto:${mail}`} className={s.mail}>
+      {mail}
+    </a>
   </div>
 );
 
 Contacts.propTypes = {
-  list: PropTypes.array.isRequired,
+  phone: PropTypes.string.isRequired,
+  mail: PropTypes.string.isRequired,
 };
 
-export default React.memo(Contacts);
+export default Contacts;
