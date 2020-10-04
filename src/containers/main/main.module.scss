@@ -45,6 +45,12 @@
   }
 }
 
+@media print {
+  .mobLine {
+    display: none;
+  }
+}
+
 .posLine {
   display: flex;
   align-items: baseline;

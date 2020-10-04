@@ -13,6 +13,13 @@
   @include max-vw($md) {
     grid-template-columns: repeat(auto-fill, 98px);
   }
+
+  @media print {
+    grid-column-gap: 15px;
+    grid-row-gap: 15px;
+    margin-top: 15px;
+    grid-template-columns: repeat(auto-fill, 90px);
+  }
 }
 
 .block {
@@ -23,6 +30,10 @@
     border-radius: 4px;
     width: 80px;
     height: 80px;
+    @media print {
+      width: 70px;
+      height: 70px;
+    }
   }
   span {
     margin-top: 8px;

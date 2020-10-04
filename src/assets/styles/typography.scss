@@ -86,4 +86,10 @@
     top: 11px;
     left: 0;
   }
+  @media print {
+    padding-left: 0;
+    &:before {
+      display: none;
+    }
+  }
 }

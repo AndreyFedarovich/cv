@@ -4,7 +4,6 @@ import github from '../../assets/images/git.svg';
 import linkedin from '../../assets/images/in.svg';
 import darkIcon from '../../assets/images/moon.svg';
 import lightIcon from '../../assets/images/sun.svg';
-
 import jsLogo from '../../assets/images/js.svg';
 import reactLogo from '../../assets/images/react.svg';
 import cssModulesLogo from '../../assets/images/css-modules.svg';
@@ -45,7 +44,7 @@ const data = {
       eng: 'Participated in the development of browser extensions, desktop applications, websites, e-mails and PDF documents',
       ua: 'Брав участь у розробці розширень браузера, настільних додатків, веб-сайтів, електронних листів та PDF документiв',
     }, {
-      eng: 'Strong knowledge about ui development (accessibility, semantic, optimization)',
+      eng: 'Strong knowledge about UI development (accessibility, semantic, optimization)',
       ua: 'Поглибленні знання про розробку UI (доступність, семантика, оптимізація)',
     }, {
       eng: 'Understanding OOP, Design Pattern',
@@ -60,7 +59,6 @@ const data = {
   },
 
   langs: ['eng', 'ua'],
-
   mode: [{
     title: 'light',
     element: <img src={lightIcon} alt="" />,

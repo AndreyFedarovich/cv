@@ -1,6 +1,11 @@
 @import "./mixins.scss";
 @import "./variables.scss";
 
+@page {
+  size: auto;
+  margin: 5mm 0 0 10mm;
+}
+
 html,
 body {
   padding: 0;
@@ -14,6 +19,10 @@ body {
   --text-color: rgba(255, 255, 255, 0.999);
   --btn-color: rgba(255, 255, 255, 0.999);
   --filter-to-white: invert(100%);
+  @media print {
+    --text-color: #161616;
+    --btn-color: #161616;
+  }
 }
 
 .light {
