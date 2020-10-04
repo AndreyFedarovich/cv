@@ -44,7 +44,7 @@ const Main = () => {
           <h1 className={s.name}>{data.name[lang]}</h1>
           <div className={s.mobLine}>
             <Social {...data.social} />
-            <Panel mode={data.mode} langs={data.langs} />
+            <Panel mode={data.mode} langs={data.langs} pdf={data.pdf} />
           </div>
         </div>
         <div className={s.posLine}>

@@ -17,7 +17,7 @@ body {
 .dark {
   --bg: #161616;
   --text-color: rgba(255, 255, 255, 0.999);
-  --btn-color: rgba(255, 255, 255, 0.999);
+  --btn-color: rgb(255, 255, 255);
   --filter-to-white: invert(100%);
   @media print {
     --text-color: #161616;
@@ -27,8 +27,8 @@ body {
 
 .light {
   --bg: rgba(255, 255, 255, 0.999);
-  --text-color: #161616;
-  --btn-color: #161616;
+  --text-color: rgb(22, 22, 22);
+  --btn-color: rgb(22, 22, 22);
   --filter-to-white: invert(0);
 }
 

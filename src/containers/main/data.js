@@ -1,5 +1,6 @@
 /* eslint-disable max-len */
 import React from 'react';
+import download from '../../assets/images/download.svg';
 import github from '../../assets/images/git.svg';
 import linkedin from '../../assets/images/in.svg';
 import darkIcon from '../../assets/images/moon.svg';
@@ -17,10 +18,18 @@ const data = {
     eng: 'Andrey Fedorovich',
     ua: 'Андрій Федорович',
   },
+
   position: {
     eng: 'Front-end developer',
     ua: 'Front-end розробник',
   },
+
+  pdf: {
+    hint: '.PDF',
+    image: download,
+    alt: 'Download PDF',
+  },
+
   location: {
     eng: 'Kiev, Ukraine',
     ua: 'Київ, Україна',

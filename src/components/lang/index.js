@@ -10,13 +10,13 @@ const Lang = ({ options }) => {
     <div className={s.wrap}>
       {options.map((option) => (
         <button
+          key={option}
           tabIndex={option === lang ? '-1' : '0'}
           className={cn({ [s.active]: option === lang })}
           onClick={(e) => {
             e.target.blur();
             selectLang(option);
           }}
-          key={option}
         >
           {option}
         </button>

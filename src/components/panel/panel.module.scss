@@ -19,4 +19,9 @@
     flex-direction: row-reverse;
     align-items: center;
   }
+  @include max-vw($xs + 10) {
+    width: 100%;
+    margin-top: 20px;
+    justify-content: flex-end;
+  }
 }

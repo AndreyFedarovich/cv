@@ -43,6 +43,10 @@
     align-items: center;
     margin-bottom: 20px;
   }
+  @include max-vw($xs + 10) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
 
 @media print {

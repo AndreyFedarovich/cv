@@ -7,6 +7,9 @@
   a {
     &:not(:last-child) {
       margin-right: 16px;
+      @include max-vw($sm) {
+        margin-right: 12px;
+      }
     }
   }
   @include min-vw($lg) {

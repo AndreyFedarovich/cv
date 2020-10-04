@@ -2,7 +2,7 @@
 @import "../../assets/styles/mixins.scss";
 
 .wrap {
-  margin-top: 8px;
+  margin-top: 6px;
   button {
     border: 0;
     background-color: transparent;
@@ -23,7 +23,7 @@
   }
   @include max-vw($lg) {
     margin-top: 0;
-    margin-right: 20px;
+    margin-right: 16px;
   }
 }
 
