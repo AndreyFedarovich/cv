@@ -11,6 +11,8 @@ import cssModulesLogo from '../../assets/images/css-modules.svg';
 import nextLogo from '../../assets/images/next.svg';
 import figmaLogo from '../../assets/images/figma.svg';
 import gitLogo from '../../assets/images/git-stack.svg';
+import cvEng from '../../assets/cv.eng.pdf';
+import cvUa from '../../assets/cv.ua.pdf';
 import { FLAG_UA } from '../../constatnts/ui.constants';
 
 const data = {
@@ -28,6 +30,11 @@ const data = {
     hint: '.PDF',
     image: download,
     alt: 'Download PDF',
+    content: {
+      eng: cvEng,
+      ua: cvUa,
+      title: 'Andrey Fedorovich CV',
+    },
   },
 
   location: {

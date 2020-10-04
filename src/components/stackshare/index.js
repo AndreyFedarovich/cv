@@ -11,7 +11,7 @@ const Stackshare = ({ title, stack }) => {
       <div className={s.stack}>
         {stack.map(({ title: stackTitle, image }) => (
           <div className={s.block} key={stackTitle}>
-            <img src={image} alt={stackTitle} />
+            <img loading="lazy" src={image} alt={stackTitle} />
             <span>{stackTitle}</span>
           </div>
         ))}
