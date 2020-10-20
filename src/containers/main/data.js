@@ -38,7 +38,7 @@ const data = {
   },
 
   location: {
-    eng: 'Kiev, Ukraine',
+    eng: 'Kyiv, Ukraine',
     ua: 'Київ, Україна',
     flag: <span role="img" aria-label={FLAG_UA}>🇺🇦</span>,
   },
@@ -108,7 +108,7 @@ const data = {
       title: 'Next.js',
       image: nextLogo,
     }, {
-      title: 'React / Redux',
+      title: 'React',
       image: reactLogo,
     }, {
       title: 'CSS Modules',
