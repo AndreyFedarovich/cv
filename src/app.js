@@ -3,7 +3,7 @@ import './assets/styles/global.scss';
 import Main from './containers/main';
 
 function App() {
-  return  <Main />;
+  return <Main />;
 }
 
 export default App;
