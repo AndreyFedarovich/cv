@@ -1,9 +1,10 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import IconLink from '../icon-link';
+
+import { list } from './data';
 import s from './social.module.scss';
 
-const Social = ({ list }) => (
+const Social = () => (
   <div className={s.wrap}>
     {list.map(({ title, image, url }) => (
       <IconLink
@@ -16,9 +17,5 @@ const Social = ({ list }) => (
 
   </div>
 );
-
-Social.propTypes = {
-  list: PropTypes.array.isRequired,
-};
 
 export default React.memo(Social);

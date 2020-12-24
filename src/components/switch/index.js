@@ -4,13 +4,14 @@ import React, {
 } from 'react';
 import PropTypes from 'prop-types';
 import { Context } from '../../context';
+import { options } from './data';
 import styles from './switch.module.scss';
 
-const Switcher = ({ options, size }) => {
+const Switcher = ({ size }) => {
   const swiperRef = useRef(null);
   const sliderRef = useRef(null);
   const elementsRef = useRef(options.map(() => createRef()));
-  const { selectMode, mode } = useContext(Context);
+  const { setMode, mode } = useContext(Context);
 
   const setSliderPosition = () => {
     const idx = mode === 'light' ? 0 : 1;
@@ -20,13 +21,14 @@ const Switcher = ({ options, size }) => {
       sliderRef.current.setAttribute('style', `width:${width}px; left:${left - parentLeft}px`);
     }
   };
-  useEffect(() => {
-    setSliderPosition();
-  });
+
+  useEffect(() => { setSliderPosition(); });
+
   const onSwitch = (e, value) => {
     e.target.blur();
-    selectMode(value);
+    setMode(value);
   };
+
   return (
     <button
       onClick={(e) => onSwitch(e, mode === 'light' ? 'dark' : 'light')}
@@ -46,7 +48,6 @@ const Switcher = ({ options, size }) => {
 };
 
 Switcher.propTypes = {
-  options: PropTypes.array.isRequired,
   size: PropTypes.oneOf(['s', 'm']),
 };
 

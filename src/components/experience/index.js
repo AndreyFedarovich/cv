@@ -1,10 +1,11 @@
 import React, { useContext } from 'react';
-import PropTypes from 'prop-types';
 import { Context } from '../../context';
 import { getPeriod } from '../../helpers/date.helper';
+
+import { title, places } from './data';
 import s from './experience.module.scss';
 
-const Experience = ({ title, places }) => {
+const Experience = () => {
   const { lang } = useContext(Context);
 
   return (
@@ -27,11 +28,6 @@ const Experience = ({ title, places }) => {
       </div>
     </>
   );
-};
-
-Experience.propTypes = {
-  title: PropTypes.object.isRequired,
-  places: PropTypes.array.isRequired,
 };
 
 export default React.memo(Experience);

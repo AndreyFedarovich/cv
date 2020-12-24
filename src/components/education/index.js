@@ -1,9 +1,10 @@
 import React, { useContext } from 'react';
-import PropTypes from 'prop-types';
 import { Context } from '../../context';
+
+import { title, list } from './data';
 import s from './education.module.scss';
 
-const Education = ({ title, list }) => {
+const Education = () => {
   const { lang } = useContext(Context);
 
   return (
@@ -21,11 +22,6 @@ const Education = ({ title, list }) => {
       </div>
     </>
   );
-};
-
-Education.propTypes = {
-  title: PropTypes.object.isRequired,
-  list: PropTypes.array.isRequired,
 };
 
 export default React.memo(Education);

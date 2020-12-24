@@ -1,11 +1,11 @@
 import React, { useContext } from 'react';
-import PropTypes from 'prop-types';
 import { Context } from '../../context';
+import {
+  image, alt, hint, content,
+} from './data';
 import s from './pdf.module.scss';
 
-const Pdf = ({
-  image, alt, hint, content,
-}) => {
+const Pdf = () => {
   const { lang } = useContext(Context);
 
   return (
@@ -18,13 +18,6 @@ const Pdf = ({
       <span className={s.hint}>{hint}</span>
     </a>
   );
-};
-
-Pdf.propTypes = {
-  image: PropTypes.string.isRequired,
-  alt: PropTypes.string.isRequired,
-  hint: PropTypes.string.isRequired,
-  content: PropTypes.object.isRequired,
 };
 
 export default Pdf;

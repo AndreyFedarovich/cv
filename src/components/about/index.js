@@ -1,9 +1,9 @@
 import React, { useContext } from 'react';
-import PropTypes from 'prop-types';
 import { Context } from '../../context';
+import { title, list } from './data';
 import s from './about.module.scss';
 
-const About = ({ title, list }) => {
+const About = () => {
   const { lang } = useContext(Context);
   return (
     <>
@@ -15,11 +15,6 @@ const About = ({ title, list }) => {
       </ul>
     </>
   );
-};
-
-About.propTypes = {
-  title: PropTypes.object.isRequired,
-  list: PropTypes.array.isRequired,
 };
 
 export default React.memo(About);

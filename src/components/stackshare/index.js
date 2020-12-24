@@ -1,9 +1,9 @@
 import React, { useContext } from 'react';
-import PropTypes from 'prop-types';
 import { Context } from '../../context';
+import { title, stack } from './stackshare';
 import s from './stackshare.module.scss';
 
-const Stackshare = ({ title, stack }) => {
+const Stackshare = () => {
   const { lang } = useContext(Context);
   return (
     <>
@@ -18,11 +18,6 @@ const Stackshare = ({ title, stack }) => {
       </div>
     </>
   );
-};
-
-Stackshare.propTypes = {
-  title: PropTypes.object.isRequired,
-  stack: PropTypes.array.isRequired,
 };
 
 export default React.memo(Stackshare);

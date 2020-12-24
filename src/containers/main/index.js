@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from 'react';
-import data from './data';
+import React from 'react';
 import Panel from '../../components/panel';
 import About from '../../components/about';
 import Social from '../../components/social';
@@ -9,64 +8,41 @@ import Experience from '../../components/experience';
 import Education from '../../components/education';
 import { Context } from '../../context';
 import useBodyClass from '../../hooks/use-body-class.hook';
+import useGlobalContext from '../../hooks/use-global-context.hook';
+import { name, position, location } from './data';
 import s from './main.module.scss';
 
 const Main = () => {
-  const [mode, setMode] = useState('light');
-  const [lang, setLang] = useState('eng');
-
-  const selectLang = (value) => setLang(value);
-  const selectMode = (value) => setMode(value);
-
-  useEffect(() => {
-    selectLang(localStorage.getItem('lang') || 'eng');
-    selectMode(localStorage.getItem('mode') || 'light');
-  }, []);
-
+  const state = useGlobalContext();
+  const { mode, lang } = state;
   useBodyClass(mode);
 
-  useEffect(() => {
-    localStorage.setItem('mode', mode);
-  }, [mode]);
-
-  useEffect(() => {
-    localStorage.setItem('lang', lang);
-  }, [lang]);
-
-  const state = {
-    lang, mode, selectLang, selectMode,
-  };
-
   return (
-    <Context.Provider value={state}>
-      <div className={s.wrap}>
+    <div className={s.wrap}>
+      <Context.Provider value={state}>
         <div className={s.line}>
-          <h1 className={s.name}>{data.name[lang]}</h1>
+          <h1 className={s.name}>{name[lang]}</h1>
           <div className={s.mobLine}>
-            <Social {...data.social} />
-            <Panel mode={data.mode} langs={data.langs} pdf={data.pdf} />
+            <Social />
+            <Panel />
           </div>
         </div>
         <div className={s.posLine}>
-          <h3 className={s.position}>{data.position[lang]}</h3>
+          <h3 className={s.position}>{position[lang]}</h3>
           <p className={s.location}>
             <span className={s.separator}>{' '}-{' '}</span>
-            <span className={s.locationContent}>{data.location[lang]}</span>
-            {data.location.flag}
+            <span className={s.locationContent}>{location[lang]}</span>
+            {location.flag}
           </p>
         </div>
-        <Contacts {...data.contacts} />
-        <About {...data.about} />
-        <Stackshare {...data.stackshare} />
-        <Experience {...data.experience} />
-        <Education {...data.education} />
-      </div>
-    </Context.Provider>
+        <Contacts />
+        <About />
+        <Stackshare />
+        <Experience />
+        <Education />
+      </Context.Provider>
+    </div>
   );
-};
-
-Main.propTypes = {
-
 };
 
 export default Main;
