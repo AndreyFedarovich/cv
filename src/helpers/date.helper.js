@@ -24,6 +24,11 @@ export const getPeriod = (start, end) => {
   const years = endUTC.getFullYear() - startUTC.getFullYear();
   const yAppendix = years > 1 ? ' years' : ' year';
   const mAppendix = months > 1 ? ' months' : ' month';
+  console.log('years: ', years);
+  console.log('months: ', months);
 
+  if (years === 0 && months === 0) {
+    return null;
+  }
   return `${years > 1 ? `${years + yAppendix}, ` : ''}${months}${mAppendix}`;
 };
