@@ -8,7 +8,7 @@ const Education = () => {
   const { lang } = useContext(Context);
 
   return (
-    <>
+    <div className={s.wrap}>
       <h2 className={s.title}>{title[lang]}</h2>
       <div>{list.map(({
         title: listTitle, description, field, start, end,
@@ -20,7 +20,7 @@ const Education = () => {
         </div>
       ))}
       </div>
-    </>
+    </div>
   );
 };
 

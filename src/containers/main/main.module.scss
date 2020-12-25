@@ -1,7 +1,4 @@
-@import "../../assets/styles/variables.scss";
-@import "../../assets/styles/grid.scss";
-@import "../../assets/styles/typography.scss";
-@import "../../assets/styles/mixins.scss";
+@import "../../assets/styles/entry.scss";
 
 .wrap {
   margin-top: 80px;
@@ -14,6 +11,10 @@
   @include max-vw($lg) {
     margin-top: 30px;
     margin-bottom: 40px;
+  }
+  @media print {
+    margin-top: 0;
+    margin-bottom: 0;
   }
 }
 

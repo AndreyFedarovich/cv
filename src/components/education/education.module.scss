@@ -1,4 +1,8 @@
-@import "../../assets/styles/typography.scss";
+@import "../../assets/styles/entry.scss";
+
+.wrap {
+  page-break-inside: avoid;
+}
 
 .title {
   @include h2();

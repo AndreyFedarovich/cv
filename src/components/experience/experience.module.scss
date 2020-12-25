@@ -1,4 +1,4 @@
-@import "../../assets/styles/typography.scss";
+@import "../../assets/styles/entry.scss";
 
 .title {
   @include h2();
@@ -27,6 +27,5 @@
 }
 
 .period {
-  opacity: 0.6;
-  font-size: 14px;
+  @include period();
 }
