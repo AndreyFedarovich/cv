@@ -14,5 +14,9 @@ export const position = {
 export const location = {
   eng: 'Kyiv, Ukraine',
   ua: 'Київ, Україна',
-  flag: <span role="img" aria-label={FLAG_UA}>🇺🇦</span>,
+  flag: (
+    <span role="img" aria-label={FLAG_UA}>
+      🇺🇦
+    </span>
+  ),
 };

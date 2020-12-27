@@ -1,6 +1,6 @@
 import React from 'react';
-import './assets/styles/global.scss';
 import Main from './containers/main';
+import './assets/styles/global.scss';
 
 const App = () => <Main />;
 

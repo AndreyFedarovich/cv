@@ -6,6 +6,8 @@ export default function useGlobalContext() {
   const [mode, setMode] = useState(storage('mode') || 'light');
   const [lang, setLang] = useState(storage('lang') || 'eng');
 
+  const selectMode = (value) => setMode(value);
+
   useEffect(() => {
     storage('mode', mode);
   }, [mode]);
@@ -16,7 +18,7 @@ export default function useGlobalContext() {
 
   return {
     mode,
-    setMode,
+    selectMode,
     lang,
     setLang,
   };

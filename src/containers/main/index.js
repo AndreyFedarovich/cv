@@ -12,9 +12,11 @@ import useGlobalContext from '../../hooks/use-global-context.hook';
 import { name, position, location } from './data';
 import s from './main.module.scss';
 
-const Main = () => {
+const cvDetails = () => {
   const state = useGlobalContext();
+
   const { mode, lang } = state;
+
   useBodyClass(mode);
 
   return (
@@ -45,4 +47,4 @@ const Main = () => {
   );
 };
 
-export default Main;
+export default cvDetails;
