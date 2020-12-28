@@ -1,0 +1,64 @@
+@import "../../../assets/styles/entry.scss";
+
+.title {
+  @include h2();
+}
+
+.description {
+  margin: 16px 0;
+  @include text();
+  color: $text-color;
+}
+
+.fields {
+  position: relative;
+  margin-top: 20px;
+  & + .title {
+    margin-top: 40px;
+  }
+}
+
+.field {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  & + & {
+    margin-top: 12px;
+  }
+
+  .input:not(:only-child) {
+    width: calc(50% - 10px);
+  }
+}
+
+.cancel {
+  margin-left: auto;
+  @include focus(50%);
+  height: 20px;
+  min-width: 20px;
+  padding: 0;
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity $speed;
+  display: flex;
+  align-items: center;
+  &:hover,
+  &:focus {
+    opacity: 1;
+  }
+  &:active {
+    opacity: 0.6;
+  }
+}
+
+.areaField {
+  & + & {
+    margin-top: 16px;
+  }
+  & + .field {
+    margin-top: 16px;
+  }
+}

@@ -3,7 +3,7 @@ import React, {
   useEffect, useRef, createRef, useContext,
 } from 'react';
 import PropTypes from 'prop-types';
-import { Context } from '../../context';
+import { CvPageContext } from '../../context';
 import { options } from './data';
 import styles from './switch.module.scss';
 
@@ -11,7 +11,7 @@ const Switcher = ({ size }) => {
   const swiperRef = useRef(null);
   const sliderRef = useRef(null);
   const elementsRef = useRef(options.map(() => createRef()));
-  const { setMode, mode } = useContext(Context);
+  const { setMode, mode } = useContext(CvPageContext);
 
   const setSliderPosition = () => {
     const idx = mode === 'light' ? 0 : 1;

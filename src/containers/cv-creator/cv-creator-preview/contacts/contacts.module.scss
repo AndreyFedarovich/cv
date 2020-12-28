@@ -1,0 +1,36 @@
+@import "../../../../assets/styles/entry.scss";
+
+.wrap {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  @include max-vw($sm) {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+.phone {
+  @include text();
+}
+
+.separator {
+  height: 16px;
+  width: 1px;
+  background-color: var(--text-color);
+  opacity: 0.1;
+  margin: 0 10px;
+  @include max-vw($sm) {
+    display: none;
+  }
+}
+
+.mail {
+  outline: none;
+  transition: opacity $speed;
+  @include text();
+  @include focus();
+  &:active {
+    opacity: 0.8;
+  }
+}

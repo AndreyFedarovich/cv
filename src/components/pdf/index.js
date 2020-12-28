@@ -1,12 +1,12 @@
 import React, { useContext } from 'react';
-import { Context } from '../../context';
+import { CvPageContext } from '../../context';
 import {
   image, alt, hint, content,
 } from './data';
 import s from './pdf.module.scss';
 
 const Pdf = () => {
-  const { lang } = useContext(Context);
+  const { lang } = useContext(CvPageContext);
 
   return (
     <a

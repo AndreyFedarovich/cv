@@ -1,0 +1,23 @@
+@import "../../../assets/styles/entry.scss";
+
+.wrap {
+  transition: color $speed;
+  color: $accent;
+  border: 1px solid;
+  border-radius: $radius-m;
+  height: $ui-height-m;
+  background-color: transparent;
+  text-transform: uppercase;
+  cursor: pointer;
+  padding: 0 16px;
+  outline: none;
+  @include caption();
+  @include focus();
+
+  &:not(:disabled) {
+    cursor: pointer;
+  }
+  &:hover {
+    color: $text-color;
+  }
+}

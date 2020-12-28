@@ -1,8 +1,12 @@
 $speed: 0.2s;
 
 // COLORS
+$text-color: rgb(22, 22, 22);
 $white: rgba(#fff, 0.9999);
+$accent: #52666e;
+$lightgray: rgba(#000, 0.15);
 $gray: #f7f7f7;
+$error-color: rgb(233, 35, 28);
 
 // RADIUS SIZES
 $radius-s: 2px;
@@ -17,3 +21,7 @@ $lg: 1000px;
 $hd: 1280px;
 $xl: 1400px;
 $xxl: 1600px;
+
+$ui-height-s: 34px;
+$ui-height-m: 38px;
+$ui-height-l: 42px;

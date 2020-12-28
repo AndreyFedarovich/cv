@@ -25,16 +25,6 @@
   }
 }
 
-@mixin h3($font-weight: 400) {
-  font-size: 20px;
-  line-height: 140%;
-  font-weight: $font-weight;
-
-  @include max-vw($hd) {
-    font-size: 19px;
-  }
-}
-
 @mixin h2($font-weight: 500) {
   font-size: 35px;
   line-height: 140%;
@@ -57,10 +47,33 @@
   }
 }
 
+@mixin h3($font-weight: 400) {
+  font-size: 20px;
+  line-height: 140%;
+  font-weight: $font-weight;
+
+  @include max-vw($hd) {
+    font-size: 19px;
+  }
+}
+
+@mixin h4($font-weight: 500) {
+  font-size: 16px;
+  line-height: 140%;
+  font-weight: $font-weight;
+}
+
 @mixin text($font-weight: 300) {
   font-size: 16px;
   line-height: 150%;
   font-weight: $font-weight;
+}
+
+@mixin caption($font-weight: 800) {
+  font-size: 12px;
+  line-height: 140%;
+  font-weight: $font-weight;
+  text-transform: uppercase;
 }
 
 @mixin li() {

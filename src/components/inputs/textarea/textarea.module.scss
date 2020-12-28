@@ -1,0 +1,48 @@
+@import "../../../assets/styles/entry.scss";
+
+.wrap {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.label {
+  color: $accent;
+  margin-bottom: 4px;
+  @include h4();
+}
+
+.textarea {
+  border: 1px solid $lightgray;
+  border-radius: $radius-m;
+  min-height: 80px;
+  padding: 10px;
+  font-size: 16px;
+  outline: none;
+  transition: border $speed;
+  min-width: 100%;
+  max-width: 100%;
+  max-height: 500px;
+  @include text();
+  &:hover {
+    border: 1px solid rgba($accent, 0.4);
+  }
+  &:focus {
+    border: 1px solid $accent;
+  }
+}
+
+.error {
+  .textarea {
+    border: 1px solid $error-color;
+  }
+}
+
+.errorMessage {
+  position: absolute;
+  right: 0;
+  top: 100%;
+  color: $error-color;
+  font-size: 12px;
+}

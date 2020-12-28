@@ -1,12 +1,12 @@
 import React, { useContext } from 'react';
 import cn from 'classnames';
-import { Context } from '../../context';
+import { CvPageContext } from '../../context';
 
 import { langs } from './data';
 import s from './lang.module.scss';
 
 const Lang = () => {
-  const { setLang, lang } = useContext(Context);
+  const { setLang, lang } = useContext(CvPageContext);
   return (
     <div className={s.wrap}>
       {langs.map((option) => (
