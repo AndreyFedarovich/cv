@@ -69,8 +69,15 @@
   font-weight: $font-weight;
 }
 
-@mixin caption($font-weight: 800) {
+@mixin caption-m($font-weight: 800) {
   font-size: 12px;
+  line-height: 140%;
+  font-weight: $font-weight;
+  text-transform: uppercase;
+}
+
+@mixin caption-s($font-weight: 800) {
+  font-size: 11px;
   line-height: 140%;
   font-weight: $font-weight;
   text-transform: uppercase;
@@ -110,4 +117,19 @@
       display: none;
     }
   }
+}
+
+@mixin inputLabel() {
+  @include h4();
+  color: $accent;
+  margin-bottom: 4px;
+  display: block;
+}
+
+@mixin inputErrorMessage() {
+  position: absolute;
+  right: 0;
+  top: 100%;
+  color: $error-color;
+  font-size: 12px;
 }

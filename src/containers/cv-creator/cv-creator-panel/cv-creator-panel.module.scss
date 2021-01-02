@@ -1,0 +1,19 @@
+@import "../../../assets/styles/entry.scss";
+
+.wrap {
+  border-bottom: 1px solid $lightgray;
+  display: flex;
+  align-items: center;
+  height: 60px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.content {
+  @include wrap();
+}
+
+.expand {
+  position: fixed;
+  right: 20px;
+}

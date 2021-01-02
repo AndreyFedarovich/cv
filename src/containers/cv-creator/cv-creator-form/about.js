@@ -12,7 +12,7 @@ const About = () => {
     fields, append, remove,
   } = useFieldArray({
     control,
-    name: 'summaryList',
+    name: 'summary',
   });
 
   return (
@@ -22,22 +22,21 @@ const About = () => {
         Type here at least three your main professional or personal qualities. Describe yourself bright, this section is the face of the CV
       </p>
       <div className={s.fields}>
-        {fields.map(({ id, placeholder }, index) => (
+        {fields.map(({ id, placeholder }, idx) => (
           <div key={id} className={s.areaField}>
-            {index > 0 && (
+            {idx > 0 && (
               <button
                 className={s.cancel}
                 type="button"
-                onClick={() => remove(index)}
+                onClick={() => remove(idx)}
               >Remove
               </button>
             )}
             <Textarea
-              key={id}
               placeholder={placeholder}
-              name={`summaryList[${index}].text`}
-              ref={register()}
-              error={errors.summaryList?.[index]?.text.message}
+              name={`summary[${idx}].text`}
+              ref={register}
+              error={errors.summary?.[idx]?.text.message}
             />
           </div>
         ))}

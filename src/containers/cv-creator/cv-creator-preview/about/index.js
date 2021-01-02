@@ -4,13 +4,14 @@ import s from './about.module.scss';
 
 const About = () => {
   const { getValues } = useFormContext();
-  const { summaryList } = getValues();
+  const { summary } = getValues();
   return (
     <>
       <h2 className={s.title}>About</h2>
       <ul className={s.list}>
-        {summaryList?.map(({ text }) => (
-          <li className={s.text} key={text}>{text}</li>
+        {summary?.map(({ text }, idx) => (
+          // TODO: Use an id instead of idx
+          <li className={s.text} key={idx}>{text}</li>
         ))}
       </ul>
     </>

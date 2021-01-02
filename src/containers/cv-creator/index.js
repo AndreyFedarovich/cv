@@ -1,20 +1,27 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useForm, FormProvider } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
+import cn from 'classnames';
 import { schema } from './validation.schema';
 import CvCreatorForm from './cv-creator-form';
 import CvCreatorPreview from './cv-creator-preview';
+import CvCreatorPanel from './cv-creator-panel';
+// import '../../assets/styles/vendors/datepicker.scss';
 import s from './cv-creator.module.scss';
 
 const CvCreator = () => {
+  const [isFull, setFull] = useState(false);
   const formManager = useForm({
     mode: 'onSubmit',
     reValidateMode: 'onChange',
     resolver: yupResolver(schema),
     defaultValues: {
-      summaryList: [{
+      summary: [{
         text: '',
         placeholder: 'e.g. Web developer with over 3 years of experience',
+      }],
+      roles: [{
+        startMonth: '',
       }],
     },
   });
@@ -25,11 +32,13 @@ const CvCreator = () => {
 
   return (
 
-    <div className={s.wrap}>
+    <div className={cn(s.wrap, { [s.full]: isFull })}>
       <FormProvider {...formManager}>
-        <CvCreatorPreview />
+        <div className={s.content}>
+          <CvCreatorPreview />
+        </div>
         <form className={s.bar} onSubmit={handleSubmit(onSubmit)}>
-          <button type="submit">Save</button>
+          <CvCreatorPanel setFull={() => setFull(!isFull)} />
           <CvCreatorForm />
         </form>
 

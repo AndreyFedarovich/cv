@@ -4,11 +4,7 @@
     "browser": true,
     "jest": true
   },
-  "plugins": [
-    "react",
-    "jsx-a11y",
-    "import"
-  ],
+  "plugins": ["react", "jsx-a11y", "import"],
   "parser": "babel-eslint",
   "parserOptions": {
     "ecmaVersion": 6,
@@ -20,16 +16,14 @@
     }
   },
   "rules": {
-    "arrow-parens": [
-      "error",
-      "always"
-    ],
+    "arrow-parens": ["error", "always"],
     "react/forbid-prop-types": 0,
     "react/jsx-filename-extension": 0,
     "react/jsx-indent": [2],
     "react/jsx-indent-props": [2],
     "react/jsx-props-no-spreading": "off",
     "react/jsx-one-expression-per-line": "off",
+    "jsx-a11y/control-has-associated-label": "off",
     "react/button-has-type": "off",
     "padded-blocks": [
       "error",
@@ -43,14 +37,9 @@
     "jsx-a11y/label-has-for": [
       2,
       {
-        "components": [
-          "label"
-        ],
+        "components": ["label"],
         "required": {
-          "some": [
-            "nesting",
-            "id"
-          ]
+          "some": ["nesting", "id"]
         },
         "allowChildren": false
       }

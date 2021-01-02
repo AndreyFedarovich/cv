@@ -30,8 +30,8 @@ const PersonalInfo = () => {
         <div className={s.field}>
           <Input
             className={s.input}
-            label="Position"
-            placeholder="Position"
+            label="Career objective"
+            placeholder="Career objective"
             name="position"
             ref={register}
             error={errors.position?.message}

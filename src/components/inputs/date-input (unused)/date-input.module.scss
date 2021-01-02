@@ -1,0 +1,37 @@
+@import "../../../assets/styles/entry.scss";
+
+.wrap {
+  width: 100%;
+  position: relative;
+  input {
+    width: 100%;
+    border: 1px solid $lightgray;
+    border-radius: $radius-m;
+    height: $ui-height-m;
+    padding: 0 10px;
+    font-size: 16px;
+    outline: none;
+    transition: border $speed;
+    @include text();
+    &:hover {
+      border: 1px solid rgba($accent, 0.4);
+    }
+    &:focus {
+      border: 1px solid $accent;
+    }
+  }
+}
+
+.error {
+  input {
+    border: 1px solid $error-color;
+  }
+}
+
+.label {
+  @include inputLabel();
+}
+
+.errorMessage {
+  @include inputErrorMessage();
+}

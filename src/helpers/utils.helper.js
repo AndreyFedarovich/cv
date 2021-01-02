@@ -1,4 +1,4 @@
-const storage = (key, data) => {
+export const storage = (key, data) => {
   if (!data) {
     return JSON.parse(localStorage.getItem(key));
   }
@@ -6,4 +6,7 @@ const storage = (key, data) => {
   return null;
 };
 
-export { storage };
+export const isNumber = (value) => {
+  const reg = /^\d+$/;
+  return reg.test(value);
+};

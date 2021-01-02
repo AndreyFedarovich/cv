@@ -18,16 +18,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-right: 16px;
+
   &:active {
     opacity: 0.6;
   }
-  @include max-vw($lg) {
-    margin-right: 16px;
-  }
-  @include min-vw($lg) {
-    width: 100%;
-    margin-top: 12px;
-  }
+
   @include focus();
   img {
     pointer-events: none;

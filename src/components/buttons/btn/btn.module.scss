@@ -11,13 +11,13 @@
   cursor: pointer;
   padding: 0 16px;
   outline: none;
-  @include caption();
+  @include caption-m();
   @include focus();
 
   &:not(:disabled) {
     cursor: pointer;
   }
   &:hover {
-    color: $text-color;
+    color: var(--text-color);
   }
 }

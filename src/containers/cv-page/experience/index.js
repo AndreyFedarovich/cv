@@ -16,21 +16,20 @@ const Experience = () => {
         title: placeTitle,
         location, company,
         start, end = currentWorkPeriod,
-      }) => {
-        const period = getPeriod(start.date, end.date);
-        return (
-          <div key={placeTitle.eng} className={s.place}>
-            <p>
-              {placeTitle[lang]} {lang === 'eng' ? 'at' : '-'} {company}
-            </p>
-            <p>{location[lang]}</p>
-            <p>
-              {start.text[lang]} - {end.text[lang]}{' '}
-              {period && <span className={s.period}>({period})</span>}
-            </p>
-          </div>
-        );
-      })}
+      }) => (
+        <div key={placeTitle.eng} className={s.place}>
+          <p>
+            {placeTitle[lang]} {lang === 'eng' ? 'at' : '-'} {company}
+          </p>
+          <p>{location[lang]}</p>
+          <p>
+            {start.text[lang]} - {end.text[lang]}
+            <span className={s.period}>
+              {getPeriod(start.date, end.date)}
+            </span>
+          </p>
+        </div>
+      ))}
       </div>
     </>
   );

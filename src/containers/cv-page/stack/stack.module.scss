@@ -28,12 +28,8 @@
   align-items: center;
   img {
     border-radius: 4px;
-    width: 80px;
-    height: 80px;
-    @media print {
-      width: 70px;
-      height: 70px;
-    }
+    width: 70px;
+    height: 70px;
   }
   span {
     margin-top: 8px;

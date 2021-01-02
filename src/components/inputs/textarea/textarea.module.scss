@@ -8,9 +8,7 @@
 }
 
 .label {
-  color: $accent;
-  margin-bottom: 4px;
-  @include h4();
+  @include inputLabel();
 }
 
 .textarea {
@@ -40,9 +38,5 @@
 }
 
 .errorMessage {
-  position: absolute;
-  right: 0;
-  top: 100%;
-  color: $error-color;
-  font-size: 12px;
+  @include inputErrorMessage();
 }
