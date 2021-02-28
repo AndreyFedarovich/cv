@@ -2,17 +2,22 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import s from './btn.module.scss';
 
-const Btn = ({ text, ...props }) => (
-  <button {...props} className={s.wrap}>
-    <span className={s.text}>{text}</span>
+const Btn = ({ size, children, ...props }) => (
+  <button
+    {...props}
+    className={s[size]}
+  >
+    <span className={s.text}>{children}</span>
   </button>
 );
 
 Btn.propTypes = {
-  text: PropTypes.string,
+  children: PropTypes.string,
+  size: PropTypes.oneOf(['s', 'm', 'l']),
 };
 
 Btn.defaultProps = {
-  text: '',
+  children: '',
+  size: 's',
 };
 export default Btn;

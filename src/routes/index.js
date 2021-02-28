@@ -1,8 +1,8 @@
 import React from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
-import { CV_CREATOR } from '../constatnts/routes.constants';
+import { CREATOR } from '../constatnts/routes.constants';
 
-import CvCreator from '../containers/cv-creator';
+import Creator from '../containers/creator';
 import CvPage from '../containers/cv-page';
 
 export const useRoutes = () => (
@@ -14,8 +14,8 @@ export const useRoutes = () => (
     />
     <Route
       exact
-      path={CV_CREATOR}
-      component={CvCreator}
+      path={CREATOR}
+      component={Creator}
     />
     <Redirect to="/" />
 

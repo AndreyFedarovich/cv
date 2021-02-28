@@ -1,1 +1,1 @@
-export const CV_CREATOR = '/cv-creator';
+export const CREATOR = '/creator';

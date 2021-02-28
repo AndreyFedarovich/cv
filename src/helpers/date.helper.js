@@ -1,4 +1,4 @@
-import { isAfter, formatDistance } from 'date-fns';
+import { isAfter, isValid, formatDistance } from 'date-fns';
 import { months } from '../constatnts/ui.constants';
 import { isNumber } from './utils.helper';
 
@@ -8,7 +8,6 @@ export const getStart = (startMonth, startYear) => {
   const year = startYear || '';
   const separator = month || year ? ' - ' : '';
   return `${month} ${year} ${separator}`;
-
 };
 
 export const getStartDate = (startMonth, startYear) => {
@@ -30,19 +29,19 @@ export const getEnd = (endMonth, endYear, isCurrent) => {
 };
 
 export const getPeriod = (start, end) => {
-  if (!start || !end || isAfter(start, end)) return null;
+  if (!start
+     || !end
+     || isAfter(start, end)
+     || !isValid(start)
+     || !isValid(end)
+  ) return null;
   return formatDistance(start, end);
 };
 
 export const maskYear = (value) => {
-  console.log('1: ', isNumber(value));
-  console.log('value: ', value);
   if (value.length <= 4 && isNumber(value)) {
-    console.log('2');
     return value;
   }
-  console.log('3', value);
-
   return value.slice(0, -1);
 
 };

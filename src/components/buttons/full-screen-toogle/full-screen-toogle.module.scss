@@ -1,0 +1,18 @@
+@import "../../../assets/styles/entry.scss";
+
+.wrap {
+  @include focus(4px);
+  position: fixed;
+  right: 20px;
+  top: 18px;
+  width: 24px;
+  height: 24px;
+  padding: 2px;
+  border: 0;
+  z-index: 1;
+  cursor: pointer;
+  background-color: transparent;
+  img {
+    width: 100%;
+  }
+}
