@@ -5,7 +5,7 @@ import About from './about';
 import Stack from './stack';
 import Experience from './experience';
 import EmptyPreview from './empty-preview';
-import useFilledObserver from '../use-filled-observer';
+import useFormDataObserver from '../use-form-data-observer';
 
 import s from './cv-creator-preview.module.scss';
 
@@ -17,7 +17,7 @@ const CvCreatorPreview = () => {
     about,
     experience,
     stack,
-  } = useFilledObserver();
+  } = useFormDataObserver();
 
   return (
     <div className={s.content}>

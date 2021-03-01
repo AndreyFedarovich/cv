@@ -13,10 +13,12 @@ const filterStack = (values) => {
 const filterValues = (values) => {
   if (isEmptyObject(values)) { return {}; }
   const vals = { ...values };
-  return cleanDeep(filterStack(vals));
+  return cleanDeep(filterStack(vals), {
+    cleanValues: [false],
+  });
 };
 
-export default function useFilledObserver({ defaultValues }) {
+export default function useChangesObserver({ defaultValues }) {
   const { getValues } = useFormContext();
   const values = filterValues(getValues());
   return {

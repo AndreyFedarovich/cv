@@ -1,39 +1,61 @@
 import React, { forwardRef } from 'react';
-import cn from 'classnames';
 import PropTypes from 'prop-types';
-
+import cn from 'classnames';
+import InputLabel from '../input-label';
 import s from './input.module.scss';
 
 const Input = forwardRef(({
-  label, name, error, className, ...props
+  label, name, error, className, placeholder, onBlur, onFocus, onChange, icon, readOnly, value,
 }, ref) => (
-  <div className={cn(s.wrap, className, {
+  <div className={cn(s.root, className, {
     [s.error]: error,
   })}
   >
-    {label && <label htmlFor={name} className={s.label}>{label}</label>}
-    <input
-      {...props}
-      id={name}
-      className={s.input}
-      name={name}
-      ref={ref}
-    />
+    {label && <InputLabel label={label} name={name} />}
+    <div className={s.wrap}>
+      {icon}
+      <input
+        id={name}
+        name={name}
+        ref={ref}
+        placeholder={placeholder}
+        onChange={onChange}
+        readOnly={readOnly}
+        onFocus={onFocus}
+        onBlur={onBlur}
+        value={value}
+        className={s.input}
+      />
+    </div>
     {error && <span className={s.errorMessage}>{error}</span>}
   </div>
 ));
 
 Input.propTypes = {
   name: PropTypes.string.isRequired,
-  className: PropTypes.string,
   label: PropTypes.string,
+  value: PropTypes.string,
   error: PropTypes.string,
+  className: PropTypes.string,
+  placeholder: PropTypes.string,
+  onBlur: PropTypes.func,
+  onFocus: PropTypes.func,
+  onChange: PropTypes.func,
+  icon: PropTypes.node,
+  readOnly: PropTypes.bool,
 };
 
 Input.defaultProps = {
-  className: '',
   label: '',
+  value: undefined,
   error: '',
+  className: '',
+  placeholder: '',
+  onBlur: null,
+  onFocus: null,
+  onChange: null,
+  readOnly: false,
+  icon: null,
 };
 
 export default Input;

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { useFormContext, Controller } from 'react-hook-form';
 import { stack } from '../../../constatnts/stack.constants';
-import DropdownSearch from '../../../components/inputs/dropdown-search';
+import { DropdownSearch } from '../../../components/dropdowns/dropdown-search';
 import { prepareStackDataToDropdown } from '../../../helpers/data.helper';
 import s from './creator-form.module.scss';
 
@@ -13,13 +13,18 @@ const Stack = ({ wrapRef }) => {
   } = useFormContext();
   const [searchValue, setSearchValue] = useState('');
 
-  const options = getValues('stack') || prepareStackDataToDropdown(stack);
+  const options = prepareStackDataToDropdown(stack);
 
-  const onSelect = ({ value }) => {
-    const idx = options.findIndex((x) => x.value === value);
+  const onSelect = (value) => {
+    const selectedStack = getValues('stack');
 
-    options[idx].isActive = !options[idx].isActive;
-    setValue('stack', options);
+    const idx = selectedStack.findIndex((option) => option === value);
+    if (idx < 0) {
+      selectedStack.push(value);
+      setValue('stack', selectedStack);
+      return;
+    }
+    setValue('stack', selectedStack.filter((option) => option !== value));
   };
 
   return (
@@ -27,7 +32,7 @@ const Stack = ({ wrapRef }) => {
       <h2 className={s.title}>Stack</h2>
       <Controller
         name="stack"
-        defaultValue={options}
+        defaultValue={[]}
         control={control}
         render={({ name }) => (
           <DropdownSearch
@@ -38,9 +43,10 @@ const Stack = ({ wrapRef }) => {
             options={options}
             isMultiple
             onSearch={(e) => setSearchValue(e.target.value)}
-            onSelect={(value) => onSelect(value)}
+            onSelect={onSelect}
             name={name}
             label="Select your stack"
+            selected={getValues('stack')}
             error={errors.stack?.message}
           />
         )}

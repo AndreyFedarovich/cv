@@ -4,10 +4,11 @@ import { useFormContext, useFieldArray, Controller } from 'react-hook-form';
 import { maskYear } from '../../../helpers/date.helper';
 import { months } from '../../../constatnts/ui.constants';
 import Checkbox from '../../../components/inputs/checkbox';
-import Dropdown from '../../../components/inputs/dropdown';
+import { Dropdown } from '../../../components/dropdowns/dropdown';
 import Input from '../../../components/inputs/input';
 import Btn from '../../../components/buttons/btn';
 import s from './creator-form.module.scss';
+import { monthsToDropdown } from '../../../mappers/months-to-dropdown';
 
 const Experience = ({ wrapRef }) => {
   const {
@@ -21,10 +22,15 @@ const Experience = ({ wrapRef }) => {
   });
 
   const getMonth = (name) => months[getValues(name)]?.value;
-
+  const mappedMonths = monthsToDropdown(months);
   const checkRoleSetDate = (idx) => {
     const isCurrent = getValues(`roles[${idx}].isCurrent`);
     setValue(`roles[${idx}].isCurrent`, !isCurrent);
+  };
+
+  const selectMonth = (name, value) => {
+    const selectedMonth = months.find((month) => month.value === value);
+    setValue(name, selectedMonth.key);
   };
 
   return (
@@ -47,7 +53,7 @@ const Experience = ({ wrapRef }) => {
                   label="Position"
                   placeholder="Position"
                   className={s.input}
-                  ref={register}
+                  ref={register()}
                   name={`roles[${idx}].position`}
                 />
               </div>
@@ -57,13 +63,13 @@ const Experience = ({ wrapRef }) => {
                   placeholder="Company"
                   className={s.input}
                   name={`roles[${idx}].company`}
-                  ref={register}
+                  ref={register()}
                 />
                 <Input
                   label="Location"
                   placeholder="Location"
                   className={s.input}
-                  ref={register}
+                  ref={register()}
                   name={`roles[${idx}].location`}
                 />
               </div>
@@ -81,9 +87,9 @@ const Experience = ({ wrapRef }) => {
                         className={s.input}
                         placeholder="Month"
                         selected={getMonth(name)}
-                        options={months}
+                        options={mappedMonths}
                         name={name}
-                        onSelect={({ key }) => setValue(name, key)}
+                        onSelect={(value) => selectMonth(name, value)}
                         error={errors[name]?.message}
                       />
                     )}
@@ -132,9 +138,9 @@ const Experience = ({ wrapRef }) => {
                           className={s.input}
                           placeholder="Month"
                           selected={getMonth(name)}
-                          options={months}
+                          options={mappedMonths}
                           name={name}
-                          onSelect={({ key }) => setValue(name, key)}
+                          onSelect={(value) => selectMonth(name, value)}
                           error={errors[name]?.message}
                         />
                       )}
@@ -172,7 +178,7 @@ const Experience = ({ wrapRef }) => {
 };
 
 Experience.propTypes = {
-  wrapRef: PropTypes.object,
+  wrapRef: PropTypes.shape({ current: PropTypes.instanceOf(Element) }),
 };
 
 Experience.defaultProps = {

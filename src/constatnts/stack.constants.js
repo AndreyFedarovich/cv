@@ -68,7 +68,8 @@ export const stack = [{
 }, {
   value: 'Jira',
   image: jira,
-}, {
+},
+{
   value: 'MongoDB',
   image: mongodb,
 }];
