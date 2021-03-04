@@ -6,9 +6,9 @@ import { isEmptyObject } from '../../helpers/utils.helper';
 export default function useFormDataObserver() {
   const { getValues } = useFormContext();
   const formData = getValues();
-
+  console.log('formData: ', formData);
   const {
-    name, surname, position, location, roles,
+    name, lastname, position, location, roles,
     phoneNumber, email, summary, stack,
   } = formData;
 
@@ -18,10 +18,10 @@ export default function useFormDataObserver() {
     isFormFilled: !isEmptyObject(cleanDeep(formData)),
     personalInfo: {
       name,
-      surname,
+      lastname,
       position,
       location,
-      isFilled: !!cleanDeep([name, surname, position, location]).length,
+      isFilled: !!cleanDeep([name, lastname, position, location]).length,
     },
     contacts: {
       phoneNumber,

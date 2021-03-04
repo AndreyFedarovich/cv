@@ -3,6 +3,7 @@ import { Switch, Route, Redirect } from 'react-router-dom';
 import { CREATOR } from '../constatnts/routes.constants';
 
 import Creator from '../containers/creator';
+import Test from '../containers/test';
 import CvPage from '../containers/cv-page';
 
 export const useRoutes = () => (
@@ -16,6 +17,11 @@ export const useRoutes = () => (
       exact
       path={CREATOR}
       component={Creator}
+    />
+    <Route
+      exact
+      path="/test"
+      component={Test}
     />
     <Redirect to="/" />
 

@@ -3,7 +3,7 @@ import { CLIENT_ERRORS } from '../../constatnts/error.constants';
 
 export const schema = yup.object().shape({
   name: yup.string().required(CLIENT_ERRORS.REQUIRED),
-  surname: yup.string().required(CLIENT_ERRORS.REQUIRED),
+  lastname: yup.string().required(CLIENT_ERRORS.REQUIRED),
   email: yup.string()
     .required(CLIENT_ERRORS.REQUIRED)
     .email(CLIENT_ERRORS.INVALID_EMAIL),

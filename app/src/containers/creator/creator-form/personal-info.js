@@ -20,11 +20,11 @@ const PersonalInfo = () => {
           />
           <Input
             className={s.input}
-            label="Surname"
-            placeholder="Surname"
-            name="surname"
+            label="Lastname"
+            placeholder="Lastname"
+            name="lastname"
             ref={register}
-            error={errors.surname?.message}
+            error={errors.lastname?.message}
           />
         </div>
         <div className={s.field}>

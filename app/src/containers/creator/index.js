@@ -7,10 +7,20 @@ import CreatorPreview from './creator-preview';
 import CreatorPanel from './creator-panel';
 import useCreator from './use-creator';
 import s from './cv-creator.module.scss';
+// import { GET_USERS } from '../../graphql/query/user';
 
 const Creator = () => {
+  // const { data, loading, error } = useQuery(GET_USERS);
+  // const [users, setUsers] = useState([]);
+  // console.log(data);
   const [isFull, setFull] = useState(false);
   const { formManager, publish, save } = useCreator();
+
+  // useEffect(() => {
+  //   if (!loading) {
+
+  //   }
+  // }, [data]);
   return (
     <div className={cn(s.wrap, { [s.full]: isFull })}>
       <FormProvider {...formManager}>

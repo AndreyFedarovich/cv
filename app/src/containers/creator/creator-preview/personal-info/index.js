@@ -3,11 +3,11 @@ import PropTypes from 'prop-types';
 import s from './personal-info.module.scss';
 
 const PersonalInfo = ({
-  name, surname, position, location,
+  name, lastname, position, location,
 }) => (
   <>
     <div className={s.line}>
-      <h1 className={s.name}>{`${name || ''} ${surname || ''}`}</h1>
+      <h1 className={s.name}>{`${name || ''} ${lastname || ''}`}</h1>
     </div>
     <div className={s.posLine}>
       {position && <h3 className={s.position}>{position}</h3>}
@@ -24,14 +24,14 @@ const PersonalInfo = ({
 
 PersonalInfo.propTypes = {
   name: PropTypes.string,
-  surname: PropTypes.string,
+  lastname: PropTypes.string,
   position: PropTypes.string,
   location: PropTypes.string,
 };
 
 PersonalInfo.defaultProps = {
   name: '',
-  surname: '',
+  lastname: '',
   position: '',
   location: '',
 };
