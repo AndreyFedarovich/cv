@@ -1,0 +1,33 @@
+@import "../../../assets/styles/entry.scss";
+
+@mixin local-btn {
+  transition: color $speed;
+  color: $accent;
+  border: 1px solid;
+  background-color: transparent;
+  border-radius: $radius-m;
+  text-transform: uppercase;
+  cursor: pointer;
+  outline: none;
+  @include caption-m();
+  @include focus();
+
+  &:not(:disabled) {
+    cursor: pointer;
+  }
+  &:hover {
+    color: var(--text-color);
+  }
+}
+
+.s {
+  @include local-btn();
+  height: $ui-height-s;
+  padding: 0 12px;
+}
+
+.m {
+  @include local-btn();
+  height: $ui-height-m;
+  padding: 0 14px;
+}

@@ -1,0 +1,82 @@
+@import "../../../assets/styles/entry.scss";
+
+.name {
+  @include h1();
+  position: relative;
+  @include max-vw($sm) {
+    margin-bottom: 4px;
+  }
+}
+
+.line {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 4px;
+  flex-direction: column-reverse;
+}
+
+.mobLine {
+  // @include max-vw($lg) {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+  margin-bottom: 20px;
+  // }
+  @include max-vw($xs + 10) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media print {
+  .mobLine {
+    display: none;
+  }
+}
+
+.posLine {
+  display: flex;
+  align-items: baseline;
+  @include max-vw($sm) {
+    flex-direction: column;
+    margin-bottom: 4px;
+  }
+}
+
+.location {
+  margin-left: 4px;
+  margin-right: 4px;
+  @include text();
+  @include max-vw($sm) {
+    margin-left: 0;
+  }
+}
+.locationContent {
+  opacity: 0.6;
+  margin-right: 8px;
+}
+.separator {
+  @include max-vw($sm) {
+    display: none;
+  }
+}
+
+.position {
+  @include h3();
+  margin-top: 0;
+}
+
+.text {
+  @include text();
+  margin-top: 40px;
+  margin-bottom: 40px;
+  span {
+    margin-right: 4px;
+  }
+  @include max-vw($lg) {
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+}

@@ -1,0 +1,26 @@
+@import "../../../../assets/styles/entry.scss";
+
+.panel {
+  // @include min-vw($lg) {
+  //   position: fixed;
+  //   right: 6vh;
+  //   top: 6vh;
+  //   display: inline-flex;
+  //   flex-direction: column;
+  //   justify-content: center;
+  //   @include max-vw($hd) {
+  //     right: 4vh;
+  //     top: 4vh;
+  //   }
+  // }
+  // @include max-vw($lg) {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  // }
+  @include max-vw($xs + 10) {
+    width: 100%;
+    margin-top: 20px;
+    justify-content: flex-end;
+  }
+}

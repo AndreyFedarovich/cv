@@ -1,0 +1,111 @@
+@import "../../../assets/styles/entry.scss";
+
+.wrap {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  padding-left: 20px;
+  padding-right: 20px;
+  min-height: calc(100vh - 60px);
+  max-height: calc(100vh - 60px);
+  overflow: auto;
+}
+
+.content {
+  @include wrap();
+}
+
+.title {
+  @include h2();
+}
+
+.description {
+  margin: 16px 0;
+  @include text();
+  color: var(--text-color);
+}
+
+.fields {
+  position: relative;
+  margin-top: 20px;
+  & + .title {
+    margin-top: 40px;
+  }
+}
+
+.group {
+  padding: 12px;
+  background-color: rgba($lightgray, 0.025);
+  border-radius: 4px;
+  position: relative;
+  & + & {
+    margin-top: 30px;
+  }
+  & + .field,
+  & + .labledField {
+    margin-top: 16px;
+  }
+  .cancel {
+    position: absolute;
+    bottom: 100%;
+    right: 0;
+    margin-bottom: 2px;
+  }
+}
+
+// FIELD TYPES
+.field {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  & + &,
+  & + .labledField {
+    margin-top: 12px;
+  }
+  & + .group {
+    margin-top: 16px;
+  }
+
+  .input:not(:only-child) {
+    width: calc(50% - 10px);
+  }
+}
+
+.areaField {
+  & + &,
+  & + .field {
+    margin-top: 16px;
+  }
+}
+
+.labledField {
+  & + &,
+  & + .field {
+    margin-top: 12px;
+  }
+}
+
+.cancel {
+  margin-left: auto;
+  @include focus();
+  height: 18px;
+  padding: 0;
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity $speed;
+  display: flex;
+  align-items: center;
+  &:hover,
+  &:focus {
+    opacity: 1;
+  }
+  &:active {
+    opacity: 0.6;
+  }
+}
+
+.label {
+  @include inputLabel();
+}

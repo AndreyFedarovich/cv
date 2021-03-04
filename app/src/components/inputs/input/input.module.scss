@@ -1,0 +1,53 @@
+@import "../../../assets/styles/entry.scss";
+
+.root {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  position: relative;
+}
+
+.wrap {
+  width: 100%;
+  display: flex;
+  position: relative;
+}
+
+.input {
+  width: 100%;
+  border: 1px solid $lightgray;
+  border-radius: $radius-m;
+  height: $ui-height-m;
+  padding: 0 10px;
+  font-size: 16px;
+  outline: none;
+  transition: border $speed;
+  position: relative;
+  background-color: transparent;
+  -webkit-appearance: none;
+  @include text();
+  &:hover {
+    border: 1px solid rgba($accent, 0.4);
+  }
+  &:focus {
+    border: 1px solid $accent;
+  }
+  &[type="number"] {
+    -moz-appearance: textfield;
+  }
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+  }
+}
+
+.error {
+  .input {
+    border: 1px solid $error-color;
+  }
+}
+
+.errorMessage {
+  @include inputErrorMessage();
+}
