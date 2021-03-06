@@ -1,14 +1,39 @@
 import React, { useState } from 'react';
-// import PropTypes from 'prop-types';
+import { useMutation } from '@apollo/client';
+import { UPDATE_USER } from '../../../graphql/mutation/user';
 
-const UserCreator = () => {
+const UserUpdater = () => {
   const [name, setName] = useState('');
   const [lastname, setLastname] = useState('');
   const [email, setEmail] = useState('');
+  const [id, setId] = useState('');
+  const [updateUser] = useMutation(UPDATE_USER);
 
   return (
-    <>
-      <h3>Create User</h3>
+    <form onSubmit={(e) => {
+      e.preventDefault();
+      updateUser({
+        variables: {
+          id, name, lastname, email,
+        },
+      });
+      setId('');
+      setName('');
+      setLastname('');
+      setEmail('');
+    }}
+    >
+      <h3>Update User</h3>
+      <label htmlFor="userID">
+        <h5>ID</h5>
+        <input
+          onChange={(e) => setId(e.target.value)}
+          value={id}
+          placeholder="ID"
+          name="userID"
+          type="text"
+        />
+      </label>
       <label htmlFor="name">
         <h5>name</h5>
         <input
@@ -39,15 +64,16 @@ const UserCreator = () => {
           type="text"
         />
       </label>
+
       <br />
       <br />
       <div>
-        <button>Create user</button>
+        <button type="submit">Update User</button>
       </div>
-    </>
+    </form>
   );
 };
 
-UserCreator.propTypes = {};
+UserUpdater.propTypes = {};
 
-export default UserCreator;
+export default UserUpdater;

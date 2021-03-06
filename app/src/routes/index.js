@@ -3,7 +3,8 @@ import { Switch, Route, Redirect } from 'react-router-dom';
 import { CREATOR } from '../constatnts/routes.constants';
 
 import Creator from '../containers/creator';
-import Test from '../containers/test';
+import TestUser from '../containers/test-user';
+import TestResume from '../containers/test-resume';
 import CvPage from '../containers/cv-page';
 
 export const useRoutes = () => (
@@ -20,8 +21,13 @@ export const useRoutes = () => (
     />
     <Route
       exact
-      path="/test"
-      component={Test}
+      path="/test-user"
+      component={TestUser}
+    />
+    <Route
+      exact
+      path="/test-resume"
+      component={TestResume}
     />
     <Redirect to="/" />
 

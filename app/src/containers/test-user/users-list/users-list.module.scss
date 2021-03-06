@@ -1,0 +1,17 @@
+.root {
+  margin-top: 50px;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 20px;
+}
+.row + .row {
+  margin-top: 20px;
+}
+
+.row span {
+  padding: 4px;
+  background-color: rgba(green, 0.05);
+}

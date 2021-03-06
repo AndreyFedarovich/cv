@@ -51,11 +51,19 @@ const Query = new GraphQLObjectType({
       },
     },
 
-    resumeListByUserId: {
+    resumeListPublished: {
       type: new GraphQLList(ResumeType),
       args: { id: { type: GraphQLID } },
       resolve(parent, args) {
-        return Resume.find({ userId: args.id });
+        return Resume.find({ userId: args.id, isPublished: true });
+      },
+    },
+
+    resumeListDrafts: {
+      type: new GraphQLList(ResumeType),
+      args: { id: { type: GraphQLID } },
+      resolve(parent, args) {
+        return Resume.find({ userId: args.id, isPublished: false });
       },
     },
 
@@ -77,18 +85,33 @@ const Mutation = new GraphQLObjectType({
         name: { type: GraphQLString },
         lastname: { type: GraphQLString },
         email: { type: GraphQLString },
-        phoneNumber: { type: GraphQLString },
-        position: { type: GraphQLString },
       },
-      resolve(parent, { name, lastname, email, phoneNumber, position }) {
+      resolve(parent, { name, lastname, email }) {
         const user = new User({
           name,
           lastname,
           email,
-          phoneNumber,
-          position,
         });
         return user.save();
+      },
+    },
+
+    updateUser: {
+      type: UserType,
+      args: {
+        id: { type: GraphQLID },
+        name: { type: GraphQLString },
+        lastname: { type: GraphQLString },
+        email: { type: GraphQLString },
+      },
+      resolve(parent, { id, name, lastname, email }) {
+        return User.findByIdAndUpdate(
+          id,
+          {
+            $set: { name, lastname, email },
+          },
+          { new: true }
+        );
       },
     },
 
@@ -101,10 +124,11 @@ const Mutation = new GraphQLObjectType({
         email: { type: GraphQLString },
         phoneNumber: { type: GraphQLString },
         position: { type: GraphQLString },
+        isPublished: { type: GraphQLBoolean },
       },
       resolve(
         parent,
-        { userId, name, lastname, email, phoneNumber, position }
+        { userId, name, lastname, email, phoneNumber, position, isPublished }
       ) {
         const resume = new Resume({
           userId,
@@ -113,8 +137,34 @@ const Mutation = new GraphQLObjectType({
           email,
           phoneNumber,
           position,
+          isPublished: !!isPublished,
         });
         return resume.save();
+      },
+    },
+
+    updateResume: {
+      type: ResumeType,
+      args: {
+        id: { type: GraphQLID },
+        name: { type: GraphQLString },
+        lastname: { type: GraphQLString },
+        email: { type: GraphQLString },
+        phoneNumber: { type: GraphQLString },
+        position: { type: GraphQLString },
+        isPublished: { type: GraphQLBoolean },
+      },
+      resolve(
+        parent,
+        { id, name, lastname, email, phoneNumber, position, isPublished }
+      ) {
+        return Resume.findByIdAndUpdate(
+          id,
+          {
+            $set: { name, lastname, email, phoneNumber, position, isPublished },
+          },
+          { new: true }
+        );
       },
     },
 

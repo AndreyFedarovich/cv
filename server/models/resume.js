@@ -9,6 +9,7 @@ const resumeSchema = new Schema(
     email: String,
     phoneNumber: String,
     position: String,
+    isPublished: Boolean
   },
   { collection: "resume" }
 );

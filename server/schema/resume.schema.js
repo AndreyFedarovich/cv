@@ -20,6 +20,7 @@ const ResumeType = new GraphQLObjectType({
     email: { type: GraphQLString },
     phoneNumber: { type: GraphQLString },
     position: { type: GraphQLString },
+    isPublished: { type: GraphQLBoolean },
     rolesList: {
       type: new GraphQLList(ResumeRoleType),
       resolve(parent) {
